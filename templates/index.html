@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WeatherGPT - AI Weather Intelligence</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="background-glow glow-one"></div>
+<div class="background-glow glow-two"></div>
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<nav class="navbar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            🌤️
+        </div>
+
+        <div>
+
+            <h2>WeatherGPT</h2>
+
+            <span id="brandSubtitle">
+                AI Weather Intelligence
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="status">
+
+        <span class="status-dot"></span>
+
+        <span id="liveWeatherText">
+            Live Weather
+        </span>
+
+    </div>
+
+</nav>
+
+
+<main class="container">
+
+    <!-- =====================================================
+         3D WEATHER SCENE
+    ====================================================== -->
+
+    <section id="weatherScene"
+             class="weather-scene scene-default">
+
+        <div class="scene-sky"></div>
+
+        <div class="scene-light"></div>
+
+
+        <!-- SUN -->
+
+        <div class="sun-3d">
+
+            <div class="sun-core"></div>
+
+            <div class="sun-ring ring-one"></div>
+
+            <div class="sun-ring ring-two"></div>
+
+        </div>
+
+
+        <!-- CLOUD 1 -->
+
+        <div class="cloud cloud-one">
+
+            <span class="cloud-part cloud-a"></span>
+            <span class="cloud-part cloud-b"></span>
+            <span class="cloud-part cloud-c"></span>
+            <span class="cloud-part cloud-d"></span>
+
+        </div>
+
+
+        <!-- CLOUD 2 -->
+
+        <div class="cloud cloud-two">
+
+            <span class="cloud-part cloud-a"></span>
+            <span class="cloud-part cloud-b"></span>
+            <span class="cloud-part cloud-c"></span>
+            <span class="cloud-part cloud-d"></span>
+
+        </div>
+
+
+        <!-- CLOUD 3 -->
+
+        <div class="cloud cloud-three">
+
+            <span class="cloud-part cloud-a"></span>
+            <span class="cloud-part cloud-b"></span>
+            <span class="cloud-part cloud-c"></span>
+            <span class="cloud-part cloud-d"></span>
+
+        </div>
+
+
+        <!-- WEATHER EFFECTS -->
+
+        <div id="rainLayer"
+             class="rain-layer"></div>
+
+        <div id="snowLayer"
+             class="snow-layer"></div>
+
+        <div id="fogLayer"
+             class="fog-layer"></div>
+
+        <div id="heatLayer"
+             class="heat-layer"></div>
+
+        <div id="lightning"
+             class="lightning"></div>
+
+
+        <div class="scene-ground"></div>
+
+
+        <!-- SCENE STATUS -->
+
+        <div class="scene-status">
+
+            <span class="scene-status-dot"></span>
+
+            <span id="sceneStatus">
+                Live Weather Animation
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="hero">
+
+
+        <!-- HERO CONTENT -->
+
+        <div>
+
+            <span id="heroTag"
+                  class="hero-tag">
+
+                AI-POWERED WEATHER
+
+            </span>
+
+
+            <h1 id="heroTitle">
+
+                Understand the
+
+                <span>
+                    Weather Around You.
+                </span>
+
+            </h1>
+
+
+            <p id="heroDescription">
+
+                Get live weather information, intelligent AI insights,
+                travel advice, health recommendations and conversational
+                weather assistance.
+
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             LOCATION SEARCH
+        ================================================= -->
+
+        <div class="search-column">
+
+
+            <!-- SEARCH BAR -->
+
+            <div class="search-area">
+
+                <input
+                    type="text"
+                    id="cityInput"
+                    placeholder="Enter city name..."
+                    autocomplete="off"
+                >
+
+
+                <button
+                    id="searchBtn"
+                    type="button">
+
+                    Search
+
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 LOCATION SUGGESTIONS
+
+                 JavaScript automatically fills this area
+                 when the user types a location.
+            ================================================== -->
+
+            <div id="locationResults"
+                 class="location-results">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ERROR
+    ====================================================== -->
+
+    <div id="error"></div>
+
+
+    <!-- =====================================================
+         MAIN GRID
+    ====================================================== -->
+
+    <section class="main-grid">
+
+
+        <!-- =================================================
+             WEATHER PANEL
+        ================================================== -->
+
+        <div class="weather-panel">
+
+
+            <!-- PANEL HEADER -->
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span id="currentWeatherLabel"
+                          class="small-label">
+
+                        CURRENT WEATHER
+
+                    </span>
+
+
+                    <h2 id="cityName">
+
+                        Search a city
+
+                    </h2>
+
+                </div>
+
+
+                <div id="weatherIcon"
+                     class="weather-icon">
+
+                    🌤️
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 TEMPERATURE
+            ================================================== -->
+
+            <div class="temperature-area">
+
+                <div id="temperature"
+                     class="temperature">
+
+                    --
+
+                </div>
+
+
+                <div class="degree">
+
+                    °C
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 WEATHER DESCRIPTION
+            ================================================== -->
+
+            <div id="description"
+                 class="description">
+
+                Search for a city to view weather.
+
+            </div>
+
+
+            <!-- =================================================
+                 WEATHER METRICS
+            ================================================== -->
+
+            <div class="weather-metrics">
+
+
+                <!-- FEELS LIKE -->
+
+                <div class="metric">
+
+                    <span>
+                        🌡️
+                    </span>
+
+                    <div>
+
+                        <small id="feelsLikeLabel">
+
+                            FEELS LIKE
+
+                        </small>
+
+                        <strong id="feelsLike">
+
+                            -- °C
+
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- HUMIDITY -->
+
+                <div class="metric">
+
+                    <span>
+                        💧
+                    </span>
+
+                    <div>
+
+                        <small id="humidityLabel">
+
+                            HUMIDITY
+
+                        </small>
+
+                        <strong id="humidity">
+
+                            -- %
+
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- WIND -->
+
+                <div class="metric">
+
+                    <span>
+                        💨
+                    </span>
+
+                    <div>
+
+                        <small id="windLabel">
+
+                            WIND
+
+                        </small>
+
+                        <strong id="wind">
+
+                            -- m/s
+
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRESSURE -->
+
+                <div class="metric">
+
+                    <span>
+                        🧭
+                    </span>
+
+                    <div>
+
+                        <small id="pressureLabel">
+
+                            PRESSURE
+
+                        </small>
+
+                        <strong id="pressure">
+
+                            -- hPa
+
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- VISIBILITY -->
+
+                <div class="metric">
+
+                    <span>
+                        👁️
+                    </span>
+
+                    <div>
+
+                        <small id="visibilityLabel">
+
+                            VISIBILITY
+
+                        </small>
+
+                        <strong id="visibility">
+
+                            -- km
+
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CLOUDINESS -->
+
+                <div class="metric">
+
+                    <span>
+                        ☁️
+                    </span>
+
+                    <div>
+
+                        <small id="cloudinessLabel">
+
+                            CLOUDINESS
+
+                        </small>
+
+                        <strong id="clouds">
+
+                            -- %
+
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 WEATHER OVERVIEW
+            ================================================== -->
+
+            <div class="overview">
+
+                <div id="overviewTitle"
+                     class="overview-title">
+
+                    Weather Overview
+
+                </div>
+
+
+                <div id="overviewText"
+                     class="overview-text">
+
+                    Search for a city to get live weather information.
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             AI PANEL
+        ================================================== -->
+
+        <div class="ai-panel">
+
+
+            <!-- =================================================
+                 AI HEADER
+            ================================================== -->
+
+            <div class="ai-header">
+
+
+                <div class="ai-title">
+
+                    <div class="ai-avatar">
+
+                        🤖
+
+                    </div>
+
+
+                    <div>
+
+                        <h2>
+
+                            WeatherGPT AI
+
+                        </h2>
+
+
+                        <span>
+
+                            Powered by Groq
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ONLINE STATUS -->
+
+                <div class="online">
+
+                    <span></span>
+
+                    <span id="onlineText">
+
+                        Online
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 CHAT CONTAINER
+            ================================================== -->
+
+            <div id="chatContainer"
+                 class="chat-container">
+
+
+                <!-- INITIAL AI MESSAGE -->
+
+                <div class="ai-message">
+
+
+                    <div class="message-avatar">
+
+                        🤖
+
+                    </div>
+
+
+                    <div class="message-content">
+
+
+                        <div class="message-name">
+
+                            WeatherGPT
+
+                        </div>
+
+
+                        <p id="welcomeMessage">
+
+                            Hello! I'm WeatherGPT.
+                            Search for a city and ask me anything
+                            about its weather.
+
+                        </p>
+
+
+                        <div class="message-time">
+
+                            Now
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 QUICK QUESTIONS
+            ================================================== -->
+
+            <div class="quick-questions">
+
+
+                <button
+                    type="button"
+                    data-question="What should I wear today?">
+
+                    👕
+                    <span>
+
+                        What should I wear?
+
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    data-question="Is it good for travel today?">
+
+                    🚗
+                    <span>
+
+                        Good for travel?
+
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    data-question="Should I carry an umbrella?">
+
+                    ☔
+                    <span>
+
+                        Need an umbrella?
+
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    data-question="How is the weather today?">
+
+                    🌤️
+                    <span>
+
+                        Today's weather
+
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 LANGUAGE + VOICE
+            ================================================== -->
+
+            <div class="voice-controls">
+
+
+                <select id="languageSelect">
+
+                    <option value="auto">
+
+                        Auto Detect
+
+                    </option>
+
+
+                    <option value="en">
+
+                        English
+
+                    </option>
+
+
+                    <option value="te">
+
+                        తెలుగు
+
+                    </option>
+
+
+                    <option value="hi">
+
+                        हिन्दी
+
+                    </option>
+
+                </select>
+
+
+                <span id="voiceStatus">
+
+                    Voice ready
+
+                </span>
+
+            </div>
+
+
+            <!-- =================================================
+                 TYPING INDICATOR
+            ================================================== -->
+
+            <div id="typingIndicator"
+                 class="typing-indicator hidden">
+
+
+                <div class="typing-avatar">
+
+                    🤖
+
+                </div>
+
+
+                <div>
+
+                    <span id="thinkingText">
+
+                        WeatherGPT is thinking...
+
+                    </span>
+
+
+                    <div class="typing-dots">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 CHAT INPUT
+            ================================================== -->
+
+            <div class="chat-input-area">
+
+
+                <textarea
+                    id="questionInput"
+                    rows="1"
+                    placeholder="Ask WeatherGPT..."
+                ></textarea>
+
+
+                <button
+                    id="sendBtn"
+                    class="send-button"
+                    type="button"
+                    title="Send message">
+
+                    ➤
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SMART INSIGHTS
+    ====================================================== -->
+
+    <section class="insights-section">
+
+
+        <!-- SECTION TITLE -->
+
+        <div class="section-title">
+
+
+            <div>
+
+                <span id="analysisLabel"
+                      class="small-label">
+
+                    AI WEATHER ANALYSIS
+
+                </span>
+
+
+                <h2 id="smartInsightsTitle">
+
+                    Smart Insights
+
+                </h2>
+
+            </div>
+
+
+            <span class="ai-badge">
+
+                GROQ AI
+
+            </span>
+
+        </div>
+
+
+        <!-- =================================================
+             INSIGHT CARDS
+        ================================================== -->
+
+        <div class="insight-grid">
+
+
+            <!-- =================================================
+                 STATUS
+            ================================================== -->
+
+            <div class="insight-card">
+
+
+                <div class="insight-icon">
+
+                    🌤️
+
+                </div>
+
+
+                <h3 id="statusTitle">
+
+                    Status
+
+                </h3>
+
+
+                <ul id="insightStatus">
+
+                    <li>
+
+                        Search a city to generate AI weather insights.
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- =================================================
+                 ALERT
+            ================================================== -->
+
+            <div class="insight-card">
+
+
+                <div class="insight-icon">
+
+                    ⚠️
+
+                </div>
+
+
+                <h3 id="alertTitle">
+
+                    Alert
+
+                </h3>
+
+
+                <ul id="insightAlert">
+
+                    <li>
+
+                        Weather alerts will appear here.
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- =================================================
+                 CLOTHING
+            ================================================== -->
+
+            <div class="insight-card">
+
+
+                <div class="insight-icon">
+
+                    👕
+
+                </div>
+
+
+                <h3 id="clothingTitle">
+
+                    Clothing
+
+                </h3>
+
+
+                <ul id="insightClothing">
+
+                    <li>
+
+                        AI clothing recommendations will appear here.
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- =================================================
+                 HEALTH
+            ================================================== -->
+
+            <div class="insight-card">
+
+
+                <div class="insight-icon">
+
+                    💚
+
+                </div>
+
+
+                <h3 id="healthTitle">
+
+                    Health
+
+                </h3>
+
+
+                <ul id="insightHealth">
+
+                    <li>
+
+                        Health and hydration advice will appear here.
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- =================================================
+                 TRAVEL
+            ================================================== -->
+
+            <div class="insight-card">
+
+
+                <div class="insight-icon">
+
+                    🚗
+
+                </div>
+
+
+                <h3 id="travelTitle">
+
+                    Travel
+
+                </h3>
+
+
+                <ul id="insightTravel">
+
+                    <li>
+
+                        Travel recommendations will appear here.
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer id="footerText">
+
+    WeatherGPT • Conversational AI for Weather Intelligence &
+    Climate Information
+
+</footer>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
