@@ -56,26 +56,19 @@ document.addEventListener("DOMContentLoaded", () => {
     ========================================================= */
 
     const translations = {
-
         en: {
             brandSubtitle: "AI Weather Intelligence",
             liveWeather: "Live Weather",
             heroTag: "AI-POWERED WEATHER",
             heroTitle: "Understand the Weather Around You.",
-            heroDescription:
-                "Get real-time weather information, AI-powered insights, and personalized weather guidance.",
-
+            heroDescription: "Get real-time weather information, AI-powered insights, and personalized weather guidance.",
             search: "Search",
             loading: "Loading...",
             enterCity: "Please enter a city name.",
             searchFirst: "Please search for a city first.",
-            enterQuestion:
-                "Please enter or speak a question.",
-
+            enterQuestion: "Please enter or speak a question.",
             searchCity: "Search a city",
-            searchWeatherDescription:
-                "Search for a city to view weather.",
-
+            searchWeatherDescription: "Search for a city to view weather.",
             currentWeather: "CURRENT WEATHER",
             feelsLike: "FEELS LIKE",
             humidity: "HUMIDITY",
@@ -83,53 +76,30 @@ document.addEventListener("DOMContentLoaded", () => {
             pressure: "PRESSURE",
             visibility: "VISIBILITY",
             cloudiness: "CLOUDINESS",
-
             weatherOverview: "Weather Overview",
-
-            overviewDefault:
-                "Search for a city to get live weather information.",
-
-            overviewText:
-                "Currently {temp}°C with {description}. Feels like {feels}°C with {humidity}% humidity.",
-
+            overviewDefault: "Search for a city to get live weather information.",
+            overviewText: "Currently {temp}°C with {description}. Feels like {feels}°C with {humidity}% humidity.",
             aiWeather: "WeatherGPT AI",
             poweredBy: "Powered by Groq",
             online: "Online",
-
-            welcome:
-                "Hello! I'm WeatherGPT. Ask me anything about the weather.",
-
+            welcome: "Hello! I'm WeatherGPT. Ask me anything about the weather.",
             thinking: "WeatherGPT is thinking...",
             voiceReady: "Voice ready",
             voiceInput: "Voice input",
             sendMessage: "Send message",
-
             askQuestion: "Ask WeatherGPT...",
-
             analysis: "AI WEATHER ANALYSIS",
             smartInsights: "Smart Insights",
-
             status: "Status",
             alert: "Alert",
             clothing: "Clothing",
             health: "Health",
             travel: "Travel",
-
-            footer:
-                "WeatherGPT • AI-Powered Weather Intelligence",
-
-            weatherAssistant:
-                "WeatherGPT is a weather assistant. Please ask a weather-related question.",
-
-            aiError:
-                "Sorry, I couldn't generate a response right now.",
-
-            weatherUnavailable:
-                "Unable to fetch weather information.",
-
-            serverInvalid:
-                "Server returned an invalid response.",
-
+            footer: "WeatherGPT • AI-Powered Weather Intelligence",
+            weatherAssistant: "WeatherGPT is a weather assistant. Please ask a weather-related question.",
+            aiError: "Sorry, I couldn't generate a response right now.",
+            weatherUnavailable: "Unable to fetch weather information.",
+            serverInvalid: "Server returned an invalid response.",
             liveAnimation: "Live Weather Animation",
             thunderstorm: "⛈️ Thunderstorm conditions",
             rain: "🌧️ Rain detected",
@@ -139,64 +109,33 @@ document.addEventListener("DOMContentLoaded", () => {
             cold: "❄️ Cool atmosphere",
             clouds: "☁️ Cloudy conditions",
             clear: "☀️ Clear weather",
-
-            listening: "🎤 Listening...",
+            listening: "🎤 Listening... Speak now",
             recognized: "Voice recognized",
-
-            languageChanged:
-                "Language changed to English",
-
-            voiceUnsupported:
-                "Voice recognition not supported",
-
-            microphoneDenied:
-                "🎤 Microphone permission denied",
-
-            noSpeech:
-                "No speech detected",
-
-            microphoneUnavailable:
-                "Microphone unavailable",
-
-            voiceNetwork:
-                "Voice network error",
-
-            voiceStopped:
-                "Voice recognition stopped",
-
-            analyzing:
-                "Analyzing weather...",
-
-            noInformation:
-                "No additional information.",
-
-            analysisUnavailable:
-                "Weather analysis unavailable.",
-
+            languageChanged: "Language changed to English",
+            voiceUnsupported: "Voice recognition not supported",
+            microphoneDenied: "🎤 Microphone permission denied. Please allow mic in browser settings.",
+            noSpeech: "No speech detected",
+            microphoneUnavailable: "Microphone unavailable",
+            voiceNetwork: "Voice network error",
+            voiceStopped: "Voice recognition stopped",
+            analyzing: "Analyzing weather...",
+            noInformation: "No additional information.",
+            analysisUnavailable: "Weather analysis unavailable.",
             userLabel: "You"
         },
-
         te: {
             brandSubtitle: "AI వాతావరణ సమాచారం",
             liveWeather: "ప్రత్యక్ష వాతావరణం",
             heroTag: "AI ఆధారిత వాతావరణం",
             heroTitle: "మీ చుట్టూ ఉన్న వాతావరణాన్ని అర్థం చేసుకోండి.",
-            heroDescription:
-                "తాజా వాతావరణ సమాచారం, AI ఆధారిత విశ్లేషణలు మరియు వ్యక్తిగత వాతావరణ సూచనలను పొందండి.",
-
+            heroDescription: "తాజా వాతావరణ సమాచారం, AI ఆధారిత విశ్లేషణలు మరియు వ్యక్తిగత వాతావరణ సూచనలను పొందండి.",
             search: "శోధించండి",
             loading: "లోడ్ అవుతోంది...",
-            enterCity:
-                "దయచేసి నగరం పేరును నమోదు చేయండి.",
-            searchFirst:
-                "ముందుగా ఒక నగరాన్ని శోధించండి.",
-            enterQuestion:
-                "దయచేసి ప్రశ్నను టైప్ చేయండి లేదా మాట్లాడండి.",
-
+            enterCity: "దయచేసి నగరం పేరును నమోదు చేయండి.",
+            searchFirst: "ముందుగా ఒక నగరాన్ని శోధించండి.",
+            enterQuestion: "దయచేసి ప్రశ్నను టైప్ చేయండి లేదా మాట్లాడండి.",
             searchCity: "నగరాన్ని శోధించండి",
-            searchWeatherDescription:
-                "వాతావరణాన్ని చూడటానికి నగరాన్ని శోధించండి.",
-
+            searchWeatherDescription: "వాతావరణాన్ని చూడటానికి నగరాన్ని శోధించండి.",
             currentWeather: "ప్రస్తుత వాతావరణం",
             feelsLike: "అనుభూతి ఉష్ణోగ్రత",
             humidity: "తేమ",
@@ -204,145 +143,66 @@ document.addEventListener("DOMContentLoaded", () => {
             pressure: "వాయు పీడనం",
             visibility: "దృశ్యమానత",
             cloudiness: "మేఘావృతం",
-
             weatherOverview: "వాతావరణ అవలోకనం",
-
-            overviewDefault:
-                "ప్రత్యక్ష వాతావరణ సమాచారాన్ని పొందడానికి నగరాన్ని శోధించండి.",
-
-            overviewText:
-                "ప్రస్తుతం {temp}°C ఉష్ణోగ్రతతో {description} ఉంది. అనుభూతి ఉష్ణోగ్రత {feels}°C, తేమ {humidity}%.",
-
+            overviewDefault: "ప్రత్యక్ష వాతావరణ సమాచారాన్ని పొందడానికి నగరాన్ని శోధించండి.",
+            overviewText: "ప్రస్తుతం {temp}°C ఉష్ణోగ్రతతో {description} ఉంది. అనుభూతి ఉష్ణోగ్రత {feels}°C, తేమ {humidity}%.",
             aiWeather: "WeatherGPT AI",
             poweredBy: "Groq ద్వారా ఆధారితం",
             online: "ఆన్‌లైన్",
-
-            welcome:
-                "నమస్కారం! నేను WeatherGPT. వాతావరణం గురించి ఏదైనా అడగండి.",
-
-            thinking:
-                "WeatherGPT ఆలోచిస్తోంది...",
-            voiceReady:
-                "వాయిస్ సిద్ధంగా ఉంది",
-            voiceInput:
-                "వాయిస్ ఇన్‌పుట్",
-            sendMessage:
-                "సందేశాన్ని పంపండి",
-
-            askQuestion:
-                "WeatherGPTని వాతావరణం గురించి అడగండి...",
-
+            welcome: "నమస్కారం! నేను WeatherGPT. వాతావరణం గురించి ఏదైనా అడగండి.",
+            thinking: "WeatherGPT ఆలోచిస్తోంది...",
+            voiceReady: "వాయిస్ సిద్ధంగా ఉంది",
+            voiceInput: "వాయిస్ ఇన్‌పుట్",
+            sendMessage: "సందేశాన్ని పంపండి",
+            askQuestion: "WeatherGPTని వాతావరణం గురించి అడగండి...",
             analysis: "AI వాతావరణ విశ్లేషణ",
             smartInsights: "స్మార్ట్ విశ్లేషణలు",
-
             status: "స్థితి",
             alert: "హెచ్చరిక",
             clothing: "దుస్తులు",
             health: "ఆరోగ్యం",
             travel: "ప్రయాణం",
-
-            footer:
-                "WeatherGPT • AI ఆధారిత వాతావరణ సమాచారం",
-
-            weatherAssistant:
-                "WeatherGPT ఒక వాతావరణ సహాయకుడు. దయచేసి వాతావరణానికి సంబంధించిన ప్రశ్న అడగండి.",
-
-            aiError:
-                "క్షమించండి, ప్రస్తుతం సమాధానం ఇవ్వలేకపోయాను.",
-
-            weatherUnavailable:
-                "వాతావరణ సమాచారాన్ని పొందలేకపోయాము.",
-
-            serverInvalid:
-                "సర్వర్ నుండి చెల్లని సమాచారం వచ్చింది.",
-
-            liveAnimation:
-                "ప్రత్యక్ష వాతావరణ యానిమేషన్",
-
-            thunderstorm:
-                "⛈️ ఉరుములతో కూడిన వర్షం",
-
-            rain:
-                "🌧️ వర్షం గుర్తించబడింది",
-
-            snow:
-                "❄️ మంచు పరిస్థితులు",
-
-            mist:
-                "🌫️ పొగమంచు వాతావరణం",
-
-            hot:
-                "🔥 అధిక ఉష్ణోగ్రత",
-
-            cold:
-                "❄️ చల్లని వాతావరణం",
-
-            clouds:
-                "☁️ మేఘావృతమైన వాతావరణం",
-
-            clear:
-                "☀️ ఆకాశం నిర్మలంగా ఉంది",
-
-            listening:
-                "🎤 వింటున్నాను...",
-
-            recognized:
-                "వాయిస్ గుర్తించబడింది",
-
-            languageChanged:
-                "భాష తెలుగులోకి మార్చబడింది",
-
-            voiceUnsupported:
-                "వాయిస్ గుర్తింపు ఈ బ్రౌజర్‌లో అందుబాటులో లేదు",
-
-            microphoneDenied:
-                "🎤 మైక్రోఫోన్ అనుమతి నిరాకరించబడింది",
-
-            noSpeech:
-                "వాయిస్ గుర్తించబడలేదు",
-
-            microphoneUnavailable:
-                "మైక్రోఫోన్ అందుబాటులో లేదు",
-
-            voiceNetwork:
-                "వాయిస్ నెట్‌వర్క్ లోపం",
-
-            voiceStopped:
-                "వాయిస్ గుర్తింపు ఆపబడింది",
-
-            analyzing:
-                "వాతావరణాన్ని విశ్లేషిస్తోంది...",
-
-            noInformation:
-                "అదనపు సమాచారం అందుబాటులో లేదు.",
-
-            analysisUnavailable:
-                "వాతావరణ విశ్లేషణ అందుబాటులో లేదు.",
-
+            footer: "WeatherGPT • AI ఆధారిత వాతావరణ సమాచారం",
+            weatherAssistant: "WeatherGPT ఒక వాతావరణ సహాయకుడు. దయచేసి వాతావరణానికి సంబంధించిన ప్రశ్న అడగండి.",
+            aiError: "క్షమించండి, ప్రస్తుతం సమాధానం ఇవ్వలేకపోయాను.",
+            weatherUnavailable: "వాతావరణ సమాచారాన్ని పొందలేకపోయాము.",
+            serverInvalid: "సర్వర్ నుండి చెల్లని సమాచారం వచ్చింది.",
+            liveAnimation: "ప్రత్యక్ష వాతావరణ యానిమేషన్",
+            thunderstorm: "⛈️ ఉరుములతో కూడిన వర్షం",
+            rain: "🌧️ వర్షం గుర్తించబడింది",
+            snow: "❄️ మంచు పరిస్థితులు",
+            mist: "🌫️ పొగమంచు వాతావరణం",
+            hot: "🔥 అధిక ఉష్ణోగ్రత",
+            cold: "❄️ చల్లని వాతావరణం",
+            clouds: "☁️ మేఘావృతమైన వాతావరణం",
+            clear: "☀️ ఆకాశం నిర్మలంగా ఉంది",
+            listening: "🎤 వింటున్నాను... మాట్లాడండి",
+            recognized: "వాయిస్ గుర్తించబడింది",
+            languageChanged: "భాష తెలుగులోకి మార్చబడింది",
+            voiceUnsupported: "వాయిస్ గుర్తింపు ఈ బ్రౌజర్‌లో అందుబాటులో లేదు",
+            microphoneDenied: "🎤 మైక్రోఫోన్ అనుమతి నిరాకరించబడింది",
+            noSpeech: "వాయిస్ గుర్తించబడలేదు",
+            microphoneUnavailable: "మైక్రోఫోన్ అందుబాటులో లేదు",
+            voiceNetwork: "వాయిస్ నెట్‌వర్క్ లోపం",
+            voiceStopped: "వాయిస్ గుర్తింపు ఆపబడింది",
+            analyzing: "వాతావరణాన్ని విశ్లేషిస్తోంది...",
+            noInformation: "అదనపు సమాచారం అందుబాటులో లేదు.",
+            analysisUnavailable: "వాతావరణ విశ్లేషణ అందుబాటులో లేదు.",
             userLabel: "మీరు"
         },
-
         hi: {
             brandSubtitle: "AI मौसम जानकारी",
             liveWeather: "लाइव मौसम",
             heroTag: "AI-संचालित मौसम",
             heroTitle: "अपने आसपास के मौसम को समझें।",
-            heroDescription:
-                "रीयल-टाइम मौसम जानकारी, AI आधारित विश्लेषण और व्यक्तिगत मौसम सुझाव प्राप्त करें।",
-
+            heroDescription: "रीयल-टाइम मौसम जानकारी, AI आधारित विश्लेषण और व्यक्तिगत मौसम सुझाव प्राप्त करें।",
             search: "खोजें",
             loading: "लोड हो रहा है...",
-            enterCity:
-                "कृपया शहर का नाम दर्ज करें।",
-            searchFirst:
-                "कृपया पहले किसी शहर को खोजें।",
-            enterQuestion:
-                "कृपया प्रश्न लिखें या बोलें।",
-
+            enterCity: "कृपया शहर का नाम दर्ज करें।",
+            searchFirst: "कृपया पहले किसी शहर को खोजें।",
+            enterQuestion: "कृपया प्रश्न लिखें या बोलें।",
             searchCity: "शहर खोजें",
-            searchWeatherDescription:
-                "मौसम देखने के लिए किसी शहर को खोजें।",
-
+            searchWeatherDescription: "मौसम देखने के लिए किसी शहर को खोजें।",
             currentWeather: "वर्तमान मौसम",
             feelsLike: "महसूस होने वाला तापमान",
             humidity: "नमी",
@@ -350,121 +210,51 @@ document.addEventListener("DOMContentLoaded", () => {
             pressure: "वायुदाब",
             visibility: "दृश्यता",
             cloudiness: "बादल",
-
             weatherOverview: "मौसम अवलोकन",
-
-            overviewDefault:
-                "लाइव मौसम की जानकारी प्राप्त करने के लिए किसी शहर को खोजें।",
-
-            overviewText:
-                "अभी तापमान {temp}°C है और {description} है। महसूस होने वाला तापमान {feels}°C है और नमी {humidity}% है।",
-
+            overviewDefault: "लाइव मौसम की जानकारी प्राप्त करने के लिए किसी शहर को खोजें।",
+            overviewText: "अभी तापमान {temp}°C है और {description} है। महसूस होने वाला तापमान {feels}°C है और नमी {humidity}% है।",
             aiWeather: "WeatherGPT AI",
             poweredBy: "Groq द्वारा संचालित",
             online: "ऑनलाइन",
-
-            welcome:
-                "नमस्ते! मैं WeatherGPT हूँ। मौसम के बारे में कुछ भी पूछें।",
-
-            thinking:
-                "WeatherGPT सोच रहा है...",
-            voiceReady:
-                "वॉयस तैयार है",
-            voiceInput:
-                "वॉयस इनपुट",
-            sendMessage:
-                "संदेश भेजें",
-
-            askQuestion:
-                "WeatherGPT से मौसम के बारे में पूछें...",
-
+            welcome: "नमस्ते! मैं WeatherGPT हूँ। मौसम के बारे में कुछ भी पूछें।",
+            thinking: "WeatherGPT सोच रहा है...",
+            voiceReady: "वॉयस तैयार है",
+            voiceInput: "वॉयस इनपुट",
+            sendMessage: "संदेश भेजें",
+            askQuestion: "WeatherGPT से मौसम के बारे में पूछें...",
             analysis: "AI मौसम विश्लेषण",
             smartInsights: "स्मार्ट विश्लेषण",
-
             status: "स्थिति",
             alert: "चेतावनी",
             clothing: "कपड़े",
             health: "स्वास्थ्य",
             travel: "यात्रा",
-
-            footer:
-                "WeatherGPT • AI-संचालित मौसम जानकारी",
-
-            weatherAssistant:
-                "WeatherGPT एक मौसम सहायक है। कृपया मौसम से संबंधित प्रश्न पूछें।",
-
-            aiError:
-                "क्षमा करें, मैं अभी उत्तर नहीं दे सका।",
-
-            weatherUnavailable:
-                "मौसम की जानकारी प्राप्त नहीं की जा सकी।",
-
-            serverInvalid:
-                "सर्वर से अमान्य प्रतिक्रिया प्राप्त हुई।",
-
-            liveAnimation:
-                "लाइव मौसम एनीमेशन",
-
-            thunderstorm:
-                "⛈️ गरज के साथ बारिश",
-
-            rain:
-                "🌧️ बारिश का पता चला",
-
-            snow:
-                "❄️ बर्फबारी की स्थिति",
-
-            mist:
-                "🌫️ धुंध वाला मौसम",
-
-            hot:
-                "🔥 उच्च तापमान",
-
-            cold:
-                "❄️ ठंडा मौसम",
-
-            clouds:
-                "☁️ बादल छाए हुए हैं",
-
-            clear:
-                "☀️ साफ मौसम",
-
-            listening:
-                "🎤 सुन रहा हूँ...",
-
-            recognized:
-                "आवाज़ पहचानी गई",
-
-            languageChanged:
-                "भाषा हिंदी में बदल दी गई है",
-
-            voiceUnsupported:
-                "इस ब्राउज़र में वॉयस पहचान उपलब्ध नहीं है",
-
-            microphoneDenied:
-                "🎤 माइक्रोफ़ोन की अनुमति नहीं है",
-
-            noSpeech:
-                "कोई आवाज़ नहीं मिली",
-
-            microphoneUnavailable:
-                "माइक्रोफ़ोन उपलब्ध नहीं है",
-
-            voiceNetwork:
-                "वॉयस नेटवर्क त्रुटि",
-
-            voiceStopped:
-                "वॉयस पहचान बंद कर दी गई",
-
-            analyzing:
-                "मौसम का विश्लेषण किया जा रहा है...",
-
-            noInformation:
-                "अतिरिक्त जानकारी उपलब्ध नहीं है।",
-
-            analysisUnavailable:
-                "मौसम विश्लेषण उपलब्ध नहीं है।",
-
+            footer: "WeatherGPT • AI-संचालित मौसम जानकारी",
+            weatherAssistant: "WeatherGPT एक मौसम सहायक है। कृपया मौसम से संबंधित प्रश्न पूछें।",
+            aiError: "क्षमा करें, मैं अभी उत्तर नहीं दे सका।",
+            weatherUnavailable: "मौसम की जानकारी प्राप्त नहीं की जा सकी।",
+            serverInvalid: "सर्वर से अमान्य प्रतिक्रिया प्राप्त हुई।",
+            liveAnimation: "लाइव मौसम एनीमेशन",
+            thunderstorm: "⛈️ गरज के साथ बारिश",
+            rain: "🌧️ बारिश का पता चला",
+            snow: "❄️ बर्फबारी की स्थिति",
+            mist: "🌫️ धुंध वाला मौसम",
+            hot: "🔥 उच्च तापमान",
+            cold: "❄️ ठंडा मौसम",
+            clouds: "☁️ बादल छाए हुए हैं",
+            clear: "☀️ साफ मौसम",
+            listening: "🎤 सुन रहा हूँ... बोलिए",
+            recognized: "आवाज़ पहचानी गई",
+            languageChanged: "भाषा हिंदी में बदल दी गई है",
+            voiceUnsupported: "इस ब्राउज़र में वॉयस पहचान उपलब्ध नहीं है",
+            microphoneDenied: "🎤 माइक्रोफ़ोन की अनुमति नहीं है",
+            noSpeech: "कोई आवाज़ नहीं मिली",
+            microphoneUnavailable: "माइक्रोफ़ोन उपलब्ध नहीं है",
+            voiceNetwork: "वॉयस नेटवर्क त्रुटि",
+            voiceStopped: "वॉयस पहचान बंद कर दी गई",
+            analyzing: "मौसम का विश्लेषण किया जा रहा है...",
+            noInformation: "अतिरिक्त जानकारी उपलब्ध नहीं है।",
+            analysisUnavailable: "मौसम विश्लेषण उपलब्ध नहीं है।",
             userLabel: "आप"
         }
     };
@@ -474,89 +264,29 @@ document.addEventListener("DOMContentLoaded", () => {
     ========================================================= */
 
     const weatherTranslations = {
-
         en: {
-            "clear sky": "Clear sky",
-            "few clouds": "Few clouds",
-            "scattered clouds": "Scattered clouds",
-            "broken clouds": "Broken clouds",
-            "overcast clouds": "Overcast clouds",
-
-            "light rain": "Light rain",
-            "moderate rain": "Moderate rain",
-            "heavy intensity rain": "Heavy rain",
-            "very heavy rain": "Very heavy rain",
-            "extreme rain": "Extreme rain",
-            "shower rain": "Shower rain",
-
-            "thunderstorm": "Thunderstorm",
-            "snow": "Snow",
-            "light snow": "Light snow",
-            "heavy snow": "Heavy snow",
-
-            "mist": "Mist",
-            "fog": "Fog",
-            "haze": "Haze",
-            "smoke": "Smoke",
-            "dust": "Dust",
-            "sand": "Sand",
-            "tornado": "Tornado"
+            "clear sky": "Clear sky", "few clouds": "Few clouds", "scattered clouds": "Scattered clouds",
+            "broken clouds": "Broken clouds", "overcast clouds": "Overcast clouds", "light rain": "Light rain",
+            "moderate rain": "Moderate rain", "heavy intensity rain": "Heavy rain", "very heavy rain": "Very heavy rain",
+            "extreme rain": "Extreme rain", "shower rain": "Shower rain", "thunderstorm": "Thunderstorm",
+            "snow": "Snow", "light snow": "Light snow", "heavy snow": "Heavy snow", "mist": "Mist",
+            "fog": "Fog", "haze": "Haze", "smoke": "Smoke", "dust": "Dust", "sand": "Sand", "tornado": "Tornado"
         },
-
         te: {
-            "clear sky": "నిర్మలమైన ఆకాశం",
-            "few clouds": "కొన్ని మేఘాలు",
-            "scattered clouds": "చెదురుమదురు మేఘాలు",
-            "broken clouds": "విరిగిన మేఘాలు",
-            "overcast clouds": "పూర్తిగా మేఘావృతమైన ఆకాశం",
-
-            "light rain": "తేలికపాటి వర్షం",
-            "moderate rain": "మోస్తరు వర్షం",
-            "heavy intensity rain": "భారీ వర్షం",
-            "very heavy rain": "చాలా భారీ వర్షం",
-            "extreme rain": "తీవ్రమైన వర్షం",
-            "shower rain": "జల్లుల వర్షం",
-
-            "thunderstorm": "ఉరుములతో కూడిన వర్షం",
-            "snow": "మంచు",
-            "light snow": "తేలికపాటి మంచు",
-            "heavy snow": "భారీ మంచు",
-
-            "mist": "పొగమంచు",
-            "fog": "దట్టమైన పొగమంచు",
-            "haze": "మసక వాతావరణం",
-            "smoke": "పొగ",
-            "dust": "దుమ్ము",
-            "sand": "ఇసుక",
-            "tornado": "సుడిగాలి"
+            "clear sky": "నిర్మలమైన ఆకాశం", "few clouds": "కొన్ని మేఘాలు", "scattered clouds": "చెదురుమదురు మేఘాలు",
+            "broken clouds": "విరిగిన మేఘాలు", "overcast clouds": "పూర్తిగా మేఘావృతమైన ఆకాశం", "light rain": "తేలికపాటి వర్షం",
+            "moderate rain": "మోస్తరు వర్షం", "heavy intensity rain": "భారీ వర్షం", "very heavy rain": "చాలా భారీ వర్షం",
+            "extreme rain": "తీవ్రమైన వర్షం", "shower rain": "జల్లుల వర్షం", "thunderstorm": "ఉరుములతో కూడిన వర్షం",
+            "snow": "మంచు", "light snow": "తేలికపాటి మంచు", "heavy snow": "భారీ మంచు", "mist": "పొగమంచు",
+            "fog": "దట్టమైన పొగమంచు", "haze": "మసక వాతావరణం", "smoke": "పొగ", "dust": "దుమ్ము", "sand": "ఇసుక", "tornado": "సుడిగాలి"
         },
-
         hi: {
-            "clear sky": "साफ आसमान",
-            "few clouds": "कुछ बादल",
-            "scattered clouds": "छिटपुट बादल",
-            "broken clouds": "टूटे हुए बादल",
-            "overcast clouds": "पूरी तरह बादल छाए हुए",
-
-            "light rain": "हल्की बारिश",
-            "moderate rain": "मध्यम बारिश",
-            "heavy intensity rain": "भारी बारिश",
-            "very heavy rain": "बहुत भारी बारिश",
-            "extreme rain": "अत्यधिक बारिश",
-            "shower rain": "बौछारें",
-
-            "thunderstorm": "गरज के साथ बारिश",
-            "snow": "बर्फबारी",
-            "light snow": "हल्की बर्फबारी",
-            "heavy snow": "भारी बर्फबारी",
-
-            "mist": "धुंध",
-            "fog": "घना कोहरा",
-            "haze": "धुंध",
-            "smoke": "धुआं",
-            "dust": "धूल",
-            "sand": "रेत",
-            "tornado": "बवंडर"
+            "clear sky": "साफ आसमान", "few clouds": "कुछ बादल", "scattered clouds": "छिटपुट बादल",
+            "broken clouds": "टूटे हुए बादल", "overcast clouds": "पूरी तरह बादल छाए हुए", "light rain": "हल्की बारिश",
+            "moderate rain": "मध्यम बारिश", "heavy intensity rain": "भारी बारिश", "very heavy rain": "बहुत भारी बारिश",
+            "extreme rain": "अत्यधिक बारिश", "shower rain": "बौछारें", "thunderstorm": "गरज के साथ बारिश",
+            "snow": "बर्फबारी", "light snow": "हल्की बर्फबारी", "heavy snow": "भारी बर्फबारी", "mist": "धुंध",
+            "fog": "घना कोहरा", "haze": "धुंध", "smoke": "धुआं", "dust": "धूल", "sand": "रेत", "tornado": "बवंडर"
         }
     };
 
@@ -565,21 +295,18 @@ document.addEventListener("DOMContentLoaded", () => {
     ========================================================= */
 
     const quickQuestions = {
-
         en: [
             "Will it rain today?",
             "Is it good for outdoor activities?",
             "What should I wear?",
             "How is the weather?"
         ],
-
         te: [
             "ఈరోజు వర్షం పడుతుందా?",
             "బయట కార్యకలాపాలకు వాతావరణం అనుకూలంగా ఉందా?",
             "నేను ఏమి ధరించాలి?",
             "వాతావరణం ఎలా ఉంది?"
         ],
-
         hi: [
             "क्या आज बारिश होगी?",
             "क्या बाहर की गतिविधियों के लिए मौसम अच्छा है?",
@@ -595,128 +322,66 @@ document.addEventListener("DOMContentLoaded", () => {
     initialize();
 
     function initialize() {
-
         initializeVoiceRecognition();
 
         createFog();
         createHeatWaves();
 
-        /*
-         * Set language before rendering UI.
-         */
         initializeLanguage();
-
         applyLanguageToUI();
 
         if (cityInput) {
-
             cityInput.focus();
-
-            cityInput.addEventListener(
-                "input",
-                handleLocationTyping
-            );
-
-            cityInput.addEventListener(
-                "keydown",
-                event => {
-
-                    if (event.key === "Enter") {
-
-                        event.preventDefault();
-                        if (locationResults) {
-                            locationResults.innerHTML = "";
-                        }
-                        searchWeather();
-                    }
+            cityInput.addEventListener("input", handleLocationTyping);
+            cityInput.addEventListener("keydown", event => {
+                if (event.key === "Enter") {
+                    event.preventDefault();
+                    if (locationResults) locationResults.innerHTML = "";
+                    searchWeather();
                 }
-            );
+            });
         }
 
         if (searchBtn) {
-            searchBtn.addEventListener(
-                "click",
-                searchWeather
-            );
+            searchBtn.addEventListener("click", searchWeather);
         }
 
         if (sendBtn) {
-            sendBtn.addEventListener(
-                "click",
-                sendQuestion
-            );
+            sendBtn.addEventListener("click", sendQuestion);
         }
 
         if (questionInput) {
-
-            questionInput.addEventListener(
-                "keydown",
-                event => {
-
-                    if (
-                        event.key === "Enter" &&
-                        !event.shiftKey
-                    ) {
-
-                        event.preventDefault();
-                        sendQuestion();
-                    }
+            questionInput.addEventListener("keydown", event => {
+                if (event.key === "Enter" && !event.shiftKey) {
+                    event.preventDefault();
+                    sendQuestion();
                 }
-            );
-
-            questionInput.addEventListener(
-                "input",
-                autoResizeTextarea
-            );
+            });
+            questionInput.addEventListener("input", autoResizeTextarea);
         }
 
         if (micBtn) {
-
-            micBtn.addEventListener(
-                "click",
-                toggleMicrophone
-            );
+            micBtn.addEventListener("click", toggleMicrophone);
         }
 
         if (languageSelect) {
-
-            languageSelect.addEventListener(
-                "change",
-                handleLanguageChange
-            );
+            languageSelect.addEventListener("change", handleLanguageChange);
         }
 
-        /*
-         * Quick question buttons.
-         */
-        document.addEventListener(
-            "click",
-            event => {
+        document.addEventListener("click", event => {
+            const button = event.target.closest(".quick-questions button");
+            if (!button) return;
 
-                const button =
-                    event.target.closest(
-                        ".quick-questions button"
-                    );
+            const question = button.dataset.question || button.textContent.trim();
+            if (!question) return;
 
-                if (!button) return;
-
-                const question =
-                    button.dataset.question ||
-                    button.textContent.trim();
-
-                if (!question) return;
-
-                if (questionInput) {
-
-                    questionInput.value =
-                        question;
-
-                    autoResizeTextarea();
-                }
-
-                askWeatherAI(question);
+            if (questionInput) {
+                questionInput.value = question;
+                autoResizeTextarea();
             }
-        );
+
+            askWeatherAI(question);
+        });
     }
 
     /* =========================================================
@@ -724,492 +389,162 @@ document.addEventListener("DOMContentLoaded", () => {
     ========================================================= */
 
     function initializeLanguage() {
-
         if (!languageSelect) return;
+        const selected = String(languageSelect.value || "auto").toLowerCase();
 
-        const selected =
-            String(
-                languageSelect.value || "auto"
-            ).toLowerCase();
-
-        /*
-         * If Auto is selected, detect browser language.
-         */
         if (selected === "auto") {
-
-            const browserLanguage =
-                String(
-                    navigator.language || "en"
-                ).toLowerCase();
-
+            const browserLanguage = String(navigator.language || "en").toLowerCase();
             if (browserLanguage.startsWith("te")) {
-
-                languageSelect.dataset.detectedLanguage =
-                    "te";
-
-            } else if (
-                browserLanguage.startsWith("hi")
-            ) {
-
-                languageSelect.dataset.detectedLanguage =
-                    "hi";
-
+                languageSelect.dataset.detectedLanguage = "te";
+            } else if (browserLanguage.startsWith("hi")) {
+                languageSelect.dataset.detectedLanguage = "hi";
             } else {
-
-                languageSelect.dataset.detectedLanguage =
-                    "en";
+                languageSelect.dataset.detectedLanguage = "en";
             }
         }
     }
 
     function getSelectedLanguage() {
-
-        if (!languageSelect) {
-            return "en";
-        }
-
-        const value =
-            String(
-                languageSelect.value || "en"
-            )
-                .trim()
-                .toLowerCase();
+        if (!languageSelect) return "en";
+        const value = String(languageSelect.value || "en").trim().toLowerCase();
 
         if (value === "auto") {
-
-            return (
-                languageSelect.dataset.detectedLanguage ||
-                detectBrowserLanguage()
-            );
+            return languageSelect.dataset.detectedLanguage || detectBrowserLanguage();
         }
-
-        if (
-            value === "te" ||
-            value === "te-in" ||
-            value === "telugu"
-        ) {
-            return "te";
-        }
-
-        if (
-            value === "hi" ||
-            value === "hi-in" ||
-            value === "hindi"
-        ) {
-            return "hi";
-        }
-
+        if (value === "te" || value === "te-in" || value === "telugu") return "te";
+        if (value === "hi" || value === "hi-in" || value === "hindi") return "hi";
         return "en";
     }
 
     function detectBrowserLanguage() {
-
-        const browserLanguage =
-            String(
-                navigator.language || "en"
-            ).toLowerCase();
-
-        if (browserLanguage.startsWith("te")) {
-            return "te";
-        }
-
-        if (browserLanguage.startsWith("hi")) {
-            return "hi";
-        }
-
+        const browserLanguage = String(navigator.language || "en").toLowerCase();
+        if (browserLanguage.startsWith("te")) return "te";
+        if (browserLanguage.startsWith("hi")) return "hi";
         return "en";
     }
 
     function t(key) {
-
-        const language =
-            getSelectedLanguage();
-
-        return (
-            translations[language]?.[key] ||
-            translations.en[key] ||
-            key
-        );
+        const language = getSelectedLanguage();
+        return translations[language]?.[key] || translations.en[key] || key;
     }
 
-    /* =========================================================
-       LANGUAGE CHANGE
-    ========================================================= */
-
     async function handleLanguageChange() {
-
         initializeLanguage();
 
-        /*
-         * Stop current speech.
-         */
         if ("speechSynthesis" in window) {
             window.speechSynthesis.cancel();
         }
 
-        /*
-         * Update voice recognition language.
-         */
         if (recognition) {
-
-            recognition.lang =
-                getRecognitionLanguage();
+            recognition.lang = getRecognitionLanguage();
         }
 
-        /*
-         * Change complete frontend.
-         */
         applyLanguageToUI();
 
-        if (voiceStatus) {
-
-            voiceStatus.textContent =
-                getLanguageChangedMessage();
+        if (voiceStatus && !isListening) {
+            voiceStatus.textContent = getLanguageChangedMessage();
         }
 
-        /*
-         * If weather exists, refresh translated
-         * Smart Insights.
-         */
-        if (
-            currentWeather &&
-            currentWeather.city
-        ) {
-
+        if (currentWeather && currentWeather.city) {
             updateWeather(currentWeather);
+            updateWeatherAnimation(currentWeather);
 
-            updateWeatherAnimation(
-                currentWeather
-            );
-
-            const requestId =
-                ++insightsRequestId;
-
+            const requestId = ++insightsRequestId;
             showInsightLoading();
-
-            await getSmartInsights(
-                currentWeather.city,
-                requestId
-            );
+            await getSmartInsights(currentWeather.city, requestId);
         }
     }
 
-    /* =========================================================
-       APPLY LANGUAGE TO COMPLETE UI
-    ========================================================= */
-
     function applyLanguageToUI() {
+        const language = getSelectedLanguage();
+        document.documentElement.lang = language;
 
-        const language =
-            getSelectedLanguage();
+        setText("brandSubtitle", t("brandSubtitle"));
+        setText("liveWeatherText", t("liveWeather"));
+        setText("heroTag", t("heroTag"));
+        setText("heroTitle", t("heroTitle"));
+        setText("heroDescription", t("heroDescription"));
 
-        /*
-         * Browser language.
-         */
-        document.documentElement.lang =
-            language;
+        setPlaceholder(cityInput, t("searchCity"));
+        if (searchBtn) searchBtn.textContent = t("search");
 
-        /*
-         * Navbar.
-         */
-        setText(
-            "brandSubtitle",
-            t("brandSubtitle")
-        );
+        setText("currentWeatherLabel", t("currentWeather"));
+        setText("overviewTitle", t("weatherOverview"));
 
-        setText(
-            "liveWeatherText",
-            t("liveWeather")
-        );
+        setText("feelsLikeLabel", t("feelsLike"));
+        setText("humidityLabel", t("humidity"));
+        setText("windLabel", t("wind"));
+        setText("pressureLabel", t("pressure"));
+        setText("visibilityLabel", t("visibility"));
+        setText("cloudinessLabel", t("cloudiness"));
 
-        /*
-         * Hero section.
-         */
-        setText(
-            "heroTag",
-            t("heroTag")
-        );
+        setText("aiWeather", t("aiWeather"));
+        setText("poweredBy", t("poweredBy"));
+        setText("onlineText", t("online"));
+        setText("thinkingText", t("thinking"));
+        setText("welcomeMessage", t("welcome"));
 
-        setText(
-            "heroTitle",
-            t("heroTitle")
-        );
+        setPlaceholder(questionInput, t("askQuestion"));
 
-        setText(
-            "heroDescription",
-            t("heroDescription")
-        );
+        if (micBtn) micBtn.title = t("voiceInput");
+        if (sendBtn) sendBtn.title = t("sendMessage");
 
-        /*
-         * Search.
-         */
-        setPlaceholder(
-            cityInput,
-            t("searchCity")
-        );
+        setText("analysisLabel", t("analysis"));
+        setText("smartInsightsTitle", t("smartInsights"));
+        setText("statusTitle", t("status"));
+        setText("alertTitle", t("alert"));
+        setText("clothingTitle", t("clothing"));
+        setText("healthTitle", t("health"));
+        setText("travelTitle", t("travel"));
 
-        if (searchBtn) {
-            searchBtn.textContent =
-                t("search");
+        setText("footerText", t("footer"));
+
+        if (voiceStatus && !isListening) {
+            voiceStatus.textContent = t("voiceReady");
         }
 
-        /*
-         * Weather panel.
-         */
-        setText(
-            "currentWeatherLabel",
-            t("currentWeather")
-        );
-
-        setText(
-            "overviewTitle",
-            t("weatherOverview")
-        );
-
-        /*
-         * Weather metric labels.
-         */
-        setText(
-            "feelsLikeLabel",
-            t("feelsLike")
-        );
-
-        setText(
-            "humidityLabel",
-            t("humidity")
-        );
-
-        setText(
-            "windLabel",
-            t("wind")
-        );
-
-        setText(
-            "pressureLabel",
-            t("pressure")
-        );
-
-        setText(
-            "visibilityLabel",
-            t("visibility")
-        );
-
-        setText(
-            "cloudinessLabel",
-            t("cloudiness")
-        );
-
-        /*
-         * AI section.
-         */
-        setText(
-            "aiWeather",
-            t("aiWeather")
-        );
-
-        setText(
-            "poweredBy",
-            t("poweredBy")
-        );
-
-        setText(
-            "onlineText",
-            t("online")
-        );
-
-        setText(
-            "thinkingText",
-            t("thinking")
-        );
-
-        setText(
-            "welcomeMessage",
-            t("welcome")
-        );
-
-        setPlaceholder(
-            questionInput,
-            t("askQuestion")
-        );
-
-        /*
-         * Button titles.
-         */
-        if (micBtn) {
-            micBtn.title =
-                t("voiceInput");
-        }
-
-        if (sendBtn) {
-            sendBtn.title =
-                t("sendMessage");
-        }
-
-        /*
-         * Smart Insights.
-         */
-        setText(
-            "analysisLabel",
-            t("analysis")
-        );
-
-        setText(
-            "smartInsightsTitle",
-            t("smartInsights")
-        );
-
-        setText(
-            "statusTitle",
-            t("status")
-        );
-
-        setText(
-            "alertTitle",
-            t("alert")
-        );
-
-        setText(
-            "clothingTitle",
-            t("clothing")
-        );
-
-        setText(
-            "healthTitle",
-            t("health")
-        );
-
-        setText(
-            "travelTitle",
-            t("travel")
-        );
-
-        /*
-         * Footer.
-         */
-        setText(
-            "footerText",
-            t("footer")
-        );
-
-        /*
-         * Voice status.
-         */
-        if (
-            voiceStatus &&
-            !isListening
-        ) {
-
-            voiceStatus.textContent =
-                t("voiceReady");
-        }
-
-        /*
-         * Quick questions.
-         */
         translateQuickQuestions(language);
 
-        /*
-         * Existing weather.
-         */
         if (currentWeather) {
-
-            updateWeather(
-                currentWeather
-            );
-
-            updateWeatherAnimation(
-                currentWeather
-            );
-
+            updateWeather(currentWeather);
+            updateWeatherAnimation(currentWeather);
         } else {
-
-            setText(
-                "cityName",
-                t("searchCity")
-            );
-
-            setText(
-                "overviewText",
-                t("overviewDefault")
-            );
+            setText("cityName", t("searchCity"));
+            setText("overviewText", t("overviewDefault"));
         }
     }
 
     function setText(id, value) {
-
-        const element =
-            document.getElementById(id);
-
-        if (element) {
-            element.textContent =
-                value;
-        }
+        const element = document.getElementById(id);
+        if (element) element.textContent = value;
     }
 
-    function setPlaceholder(
-        element,
-        value
-    ) {
-
-        if (element) {
-            element.placeholder =
-                value;
-        }
+    function setPlaceholder(element, value) {
+        if (element) element.placeholder = value;
     }
-
-    /* =========================================================
-       QUICK QUESTIONS
-    ========================================================= */
 
     function translateQuickQuestions(language) {
+        const buttons = document.querySelectorAll(".quick-questions button");
+        const list = quickQuestions[language] || quickQuestions.en;
 
-        const buttons =
-            document.querySelectorAll(
-                ".quick-questions button"
-            );
-
-        const list =
-            quickQuestions[language] ||
-            quickQuestions.en;
-
-        buttons.forEach(
-            (button, index) => {
-
-                if (!list[index]) return;
-
-                /*
-                 * Visible text.
-                 */
-                const span =
-                    button.querySelector("span");
-
-                if (span) {
-
-                    span.textContent =
-                        list[index];
-
-                } else {
-
-                    button.textContent =
-                        list[index];
-                }
-
-                /*
-                 * Actual question sent to backend.
-                 */
-                button.dataset.question =
-                    list[index];
+        buttons.forEach((button, index) => {
+            if (!list[index]) return;
+            const span = button.querySelector("span");
+            if (span) {
+                span.textContent = list[index];
+            } else {
+                button.textContent = list[index];
             }
-        );
+            button.dataset.question = list[index];
+        });
     }
 
     /* =========================================================
-       DETAILED LOCATION SEARCH - ADDITION ONLY
+       LOCATION SEARCH
     ========================================================= */
 
     function handleLocationTyping() {
         const query = cityInput ? cityInput.value.trim() : "";
-
         clearTimeout(locationSearchTimer);
 
         if (locationSearchController) {
@@ -1247,16 +582,11 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
             const data = await response.json();
-
-            if (!response.ok) {
-                throw new Error(data.error || "Location not found.");
-            }
+            if (!response.ok) throw new Error(data.error || "Location not found.");
 
             displayLocationResults(data.results || []);
         } catch (error) {
             if (error.name === "AbortError") return;
-
-            console.error("Location Search Error:", error);
             locationResults.innerHTML = `
                 <div class="location-result location-search-status">
                     ❌ ${escapeLocationText(error.message)}
@@ -1267,7 +597,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function displayLocationResults(results) {
         if (!locationResults) return;
-
         locationResults.innerHTML = "";
 
         if (!results || results.length === 0) {
@@ -1285,18 +614,8 @@ document.addEventListener("DOMContentLoaded", () => {
             card.setAttribute("role", "button");
             card.tabIndex = 0;
 
-            // Village/Mandal/State/Country hierarchy display.
-            // Falls back gracefully if any level is missing for
-            // a given location.
-            const villageName =
-                location.village || location.name || "";
-
-            const region = [
-                location.mandal,
-                location.district,
-                location.state,
-                location.country
-            ]
+            const villageName = location.village || location.name || "";
+            const region = [location.mandal, location.district, location.state, location.country]
                 .filter(Boolean)
                 .join(", ");
 
@@ -1307,12 +626,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="location-result-main">
                     <div class="location-result-icon">📍</div>
                     <div>
-                        <div class="location-result-name">
-                            ${escapeLocationText(villageName)}
-                        </div>
-                        <div class="location-result-region">
-                            ${escapeLocationText(region || "Location")}
-                        </div>
+                        <div class="location-result-name">${escapeLocationText(villageName)}</div>
+                        <div class="location-result-region">${escapeLocationText(region || "Location")}</div>
                         <div class="location-result-coordinates">
                             ${Number.isFinite(lat) ? lat.toFixed(5) : "--"},
                             ${Number.isFinite(lon) ? lon.toFixed(5) : "--"}
@@ -1336,7 +651,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function selectLocation(location) {
         selectedLocation = location;
-
         const lat = Number(location.lat);
         const lon = Number(location.lon);
 
@@ -1373,10 +687,7 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
             const data = await parseResponse(response);
-
-            if (!response.ok) {
-                throw new Error(data.error || t("weatherUnavailable"));
-            }
+            if (!response.ok) throw new Error(data.error || t("weatherUnavailable"));
 
             currentWeather = data;
             updateWeather(data);
@@ -1410,18 +721,9 @@ document.addEventListener("DOMContentLoaded", () => {
     ========================================================= */
 
     function searchWeather() {
-
-        const city =
-            cityInput
-                ? cityInput.value.trim()
-                : "";
-
+        const city = cityInput ? cityInput.value.trim() : "";
         if (!city) {
-
-            showError(
-                t("enterCity")
-            );
-
+            showError(t("enterCity"));
             return;
         }
 
@@ -1446,797 +748,260 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     async function getWeather(city) {
-
         hideError();
 
         if (searchBtn) {
-
             searchBtn.disabled = true;
-
-            searchBtn.textContent =
-                t("loading");
+            searchBtn.textContent = t("loading");
         }
 
         try {
-
-            const response =
-                await fetch(
-                    `/weather?city=${encodeURIComponent(city)}`
-                );
-
-            const data =
-                await parseResponse(response);
+            const response = await fetch(`/weather?city=${encodeURIComponent(city)}`);
+            const data = await parseResponse(response);
 
             if (!response.ok) {
-
-                throw new Error(
-                    data.error ||
-                    t("weatherUnavailable")
-                );
+                throw new Error(data.error || t("weatherUnavailable"));
             }
 
-            currentWeather =
-                data;
-
+            currentWeather = data;
             updateWeather(data);
-
             updateWeatherAnimation(data);
 
             showInsightLoading();
-
-            const requestId =
-                ++insightsRequestId;
-
-            await getSmartInsights(
-                data.city,
-                requestId
-            );
+            const requestId = ++insightsRequestId;
+            await getSmartInsights(data.city, requestId);
 
         } catch (error) {
-
-            console.error(
-                "Weather Error:",
-                error
-            );
-
-            showError(
-                error.message ||
-                t("weatherUnavailable")
-            );
-
+            console.error("Weather Error:", error);
+            showError(error.message || t("weatherUnavailable"));
         } finally {
-
             if (searchBtn) {
-
-                searchBtn.disabled =
-                    false;
-
-                searchBtn.textContent =
-                    t("search");
+                searchBtn.disabled = false;
+                searchBtn.textContent = t("search");
             }
         }
     }
 
-    async function parseResponse(
-        response
-    ) {
-
-        const text =
-            await response.text();
-
-        if (!text) {
-            return {};
-        }
-
+    async function parseResponse(response) {
+        const text = await response.text();
+        if (!text) return {};
         try {
-
             return JSON.parse(text);
-
         } catch (error) {
-
-            throw new Error(
-                t("serverInvalid")
-            );
+            throw new Error(t("serverInvalid"));
         }
     }
 
     /* =========================================================
-       WEATHER DISPLAY
+       WEATHER DISPLAY & ANIMATION
     ========================================================= */
 
     function updateWeather(data) {
-
         if (!data) return;
 
-        if (cityName) {
-
-            cityName.textContent =
-                `${data.city || "--"}, ${data.country || ""}`;
-        }
-
+        if (cityName) cityName.textContent = `${data.city || "--"}, ${data.country || ""}`;
         if (temperature) {
-
-            const value =
-                Number(data.temperature);
-
-            temperature.textContent =
-                Number.isFinite(value)
-                    ? Math.round(value)
-                    : "--";
+            const value = Number(data.temperature);
+            temperature.textContent = Number.isFinite(value) ? Math.round(value) : "--";
         }
-
         if (feelsLike) {
-
-            const value =
-                Number(data.feels_like);
-
-            feelsLike.textContent =
-                Number.isFinite(value)
-                    ? `${Math.round(value)}°C`
-                    : "--°C";
+            const value = Number(data.feels_like);
+            feelsLike.textContent = Number.isFinite(value) ? `${Math.round(value)}°C` : "--°C";
         }
-
-        if (humidity) {
-
-            humidity.textContent =
-                `${data.humidity ?? "--"}%`;
-        }
-
+        if (humidity) humidity.textContent = `${data.humidity ?? "--"}%`;
         if (wind) {
-
-            const value =
-                Number(data.wind_speed);
-
-            wind.textContent =
-                Number.isFinite(value)
-                    ? `${value.toFixed(1)} m/s`
-                    : "-- m/s";
+            const value = Number(data.wind_speed);
+            wind.textContent = Number.isFinite(value) ? `${value.toFixed(1)} m/s` : "-- m/s";
         }
-
-        if (pressure) {
-
-            pressure.textContent =
-                `${data.pressure ?? "--"} hPa`;
-        }
-
+        if (pressure) pressure.textContent = `${data.pressure ?? "--"} hPa`;
         if (visibility) {
-
-            const value =
-                Number(data.visibility);
-
-            visibility.textContent =
-                Number.isFinite(value)
-                    ? `${value.toFixed(1)} km`
-                    : "-- km";
+            const value = Number(data.visibility);
+            visibility.textContent = Number.isFinite(value) ? `${value.toFixed(1)} km` : "-- km";
         }
+        if (clouds) clouds.textContent = `${data.clouds ?? "--"}%`;
+        if (description) description.textContent = getTranslatedWeatherDescription(data.description);
 
-        if (clouds) {
-
-            clouds.textContent =
-                `${data.clouds ?? "--"}%`;
-        }
-
-        /*
-         * Translate weather condition.
-         */
-        if (description) {
-
-            description.textContent =
-                getTranslatedWeatherDescription(
-                    data.description
-                );
-        }
-
-        /*
-         * Dynamic weather overview.
-         */
         updateWeatherOverview(data);
-
-        /*
-         * Weather icon.
-         */
         updateWeatherIcon(data);
     }
 
-    /* =========================================================
-       WEATHER OVERVIEW
-    ========================================================= */
-
     function updateWeatherOverview(data) {
-
-        const overview =
-            document.getElementById(
-                "overviewText"
-            );
-
+        const overview = document.getElementById("overviewText");
         if (!overview) return;
 
-        const temp =
-            Number(data.temperature);
+        const temp = Number(data.temperature);
+        const feels = Number(data.feels_like);
+        const humidityValue = data.humidity ?? "--";
+        const translatedDescription = getTranslatedWeatherDescription(data.description);
 
-        const feels =
-            Number(data.feels_like);
-
-        const humidityValue =
-            data.humidity ?? "--";
-
-        const translatedDescription =
-            getTranslatedWeatherDescription(
-                data.description
-            );
-
-        if (
-            Number.isFinite(temp) &&
-            Number.isFinite(feels)
-        ) {
-
-            overview.textContent =
-                t("overviewText")
-                    .replace(
-                        "{temp}",
-                        Math.round(temp)
-                    )
-                    .replace(
-                        "{description}",
-                        translatedDescription
-                    )
-                    .replace(
-                        "{feels}",
-                        Math.round(feels)
-                    )
-                    .replace(
-                        "{humidity}",
-                        humidityValue
-                    );
-
+        if (Number.isFinite(temp) && Number.isFinite(feels)) {
+            overview.textContent = t("overviewText")
+                .replace("{temp}", Math.round(temp))
+                .replace("{description}", translatedDescription)
+                .replace("{feels}", Math.round(feels))
+                .replace("{humidity}", humidityValue);
         } else {
-
-            overview.textContent =
-                t("overviewDefault");
+            overview.textContent = t("overviewDefault");
         }
     }
 
-    /* =========================================================
-       WEATHER DESCRIPTION TRANSLATION
-    ========================================================= */
+    function getTranslatedWeatherDescription(weatherDescription) {
+        if (!weatherDescription) return "";
+        const language = getSelectedLanguage();
+        const normalized = String(weatherDescription).trim().toLowerCase();
+        const dictionary = weatherTranslations[language];
 
-    function getTranslatedWeatherDescription(
-        weatherDescription
-    ) {
-
-        if (!weatherDescription) {
-            return "";
-        }
-
-        const language =
-            getSelectedLanguage();
-
-        const normalized =
-            String(weatherDescription)
-                .trim()
-                .toLowerCase();
-
-        const dictionary =
-            weatherTranslations[language];
-
-        if (
-            dictionary &&
-            dictionary[normalized]
-        ) {
-
-            return dictionary[normalized];
-        }
-
-        /*
-         * Partial matching.
-         */
+        if (dictionary && dictionary[normalized]) return dictionary[normalized];
         if (dictionary) {
-
-            const key =
-                Object.keys(dictionary)
-                    .find(item =>
-                        normalized.includes(item)
-                    );
-
-            if (key) {
-
-                return dictionary[key];
-            }
+            const key = Object.keys(dictionary).find(item => normalized.includes(item));
+            if (key) return dictionary[key];
         }
-
-        /*
-         * English fallback.
-         */
-        return capitalize(
-            weatherDescription
-        );
+        return capitalize(weatherDescription);
     }
-
-    /* =========================================================
-       WEATHER ICON
-    ========================================================= */
 
     function updateWeatherIcon(data) {
-
         if (!weatherIcon) return;
+        const condition = String(data.condition || "").toLowerCase();
+        const desc = String(data.description || "").toLowerCase();
 
-        const condition =
-            String(
-                data.condition || ""
-            ).toLowerCase();
-
-        const desc =
-            String(
-                data.description || ""
-            ).toLowerCase();
-
-        if (
-            condition.includes("thunder") ||
-            condition.includes("storm")
-        ) {
-
-            weatherIcon.textContent =
-                "⛈️";
-
-        } else if (
-            condition.includes("rain") ||
-            condition.includes("drizzle")
-        ) {
-
-            weatherIcon.textContent =
-                "🌧️";
-
-        } else if (
-            condition.includes("snow")
-        ) {
-
-            weatherIcon.textContent =
-                "❄️";
-
-        } else if (
-            condition.includes("mist") ||
-            condition.includes("fog") ||
-            desc.includes("mist") ||
-            desc.includes("fog") ||
-            desc.includes("haze")
-        ) {
-
-            weatherIcon.textContent =
-                "🌫️";
-
-        } else if (
-            condition.includes("cloud")
-        ) {
-
-            weatherIcon.textContent =
-                "☁️";
-
-        } else {
-
-            weatherIcon.textContent =
-                "☀️";
-        }
+        if (condition.includes("thunder") || condition.includes("storm")) weatherIcon.textContent = "⛈️";
+        else if (condition.includes("rain") || condition.includes("drizzle")) weatherIcon.textContent = "🌧️";
+        else if (condition.includes("snow")) weatherIcon.textContent = "❄️";
+        else if (condition.includes("mist") || condition.includes("fog") || desc.includes("mist") || desc.includes("fog") || desc.includes("haze")) weatherIcon.textContent = "🌫️";
+        else if (condition.includes("cloud")) weatherIcon.textContent = "☁️";
+        else weatherIcon.textContent = "☀️";
     }
 
-    /* =========================================================
-       WEATHER ANIMATION
-    ========================================================= */
-
-    function updateWeatherAnimation(
-        data
-    ) {
-
+    function updateWeatherAnimation(data) {
         if (!weatherScene) return;
+        const condition = String(data.condition || "").toLowerCase();
+        const weatherDescription = String(data.description || "").toLowerCase();
+        const temp = Number(data.temperature);
 
-        const condition =
-            String(
-                data.condition || ""
-            ).toLowerCase();
+        let state = "scene-default";
+        let message = t("liveAnimation");
 
-        const weatherDescription =
-            String(
-                data.description || ""
-            ).toLowerCase();
-
-        const temp =
-            Number(data.temperature);
-
-        let state =
-            "scene-default";
-
-        let message =
-            t("liveAnimation");
-
-        if (
-            condition.includes("thunder") ||
-            condition.includes("storm")
-        ) {
-
-            state =
-                "scene-storm";
-
-            message =
-                t("thunderstorm");
-
-        } else if (
-            condition.includes("rain") ||
-            condition.includes("drizzle")
-        ) {
-
-            state =
-                "scene-rain";
-
-            message =
-                t("rain");
-
-        } else if (
-            condition.includes("snow")
-        ) {
-
-            state =
-                "scene-snow";
-
-            message =
-                t("snow");
-
-        } else if (
-            condition.includes("mist") ||
-            condition.includes("fog") ||
-            condition.includes("haze") ||
-            weatherDescription.includes("mist") ||
-            weatherDescription.includes("fog") ||
-            weatherDescription.includes("haze")
-        ) {
-
-            state =
-                "scene-mist";
-
-            message =
-                t("mist");
-
-        } else if (
-            temp > 35
-        ) {
-
-            state =
-                "scene-hot";
-
-            message =
-                t("hot");
-
-        } else if (
-            temp < 15
-        ) {
-
-            state =
-                "scene-cold";
-
-            message =
-                t("cold");
-
-        } else if (
-            condition.includes("cloud")
-        ) {
-
-            state =
-                "scene-clouds";
-
-            message =
-                t("clouds");
-
+        if (condition.includes("thunder") || condition.includes("storm")) {
+            state = "scene-storm";
+            message = t("thunderstorm");
+        } else if (condition.includes("rain") || condition.includes("drizzle")) {
+            state = "scene-rain";
+            message = t("rain");
+        } else if (condition.includes("snow")) {
+            state = "scene-snow";
+            message = t("snow");
+        } else if (condition.includes("mist") || condition.includes("fog") || condition.includes("haze") || weatherDescription.includes("mist") || weatherDescription.includes("fog") || weatherDescription.includes("haze")) {
+            state = "scene-mist";
+            message = t("mist");
+        } else if (temp > 35) {
+            state = "scene-hot";
+            message = t("hot");
+        } else if (temp < 15) {
+            state = "scene-cold";
+            message = t("cold");
+        } else if (condition.includes("cloud")) {
+            state = "scene-clouds";
+            message = t("clouds");
         } else {
-
-            state =
-                "scene-clear";
-
-            message =
-                t("clear");
+            state = "scene-clear";
+            message = t("clear");
         }
 
-        weatherScene.className =
-            "weather-scene";
+        weatherScene.className = "weather-scene";
+        weatherScene.classList.add(state);
 
-        weatherScene.classList.add(
-            state
-        );
+        if (sceneStatus) sceneStatus.textContent = message;
 
-        if (sceneStatus) {
+        if (state === "scene-rain" || state === "scene-storm") createRain();
+        else clearLayer(rainLayer);
 
-            sceneStatus.textContent =
-                message;
-        }
+        if (state === "scene-snow") createSnow();
+        else clearLayer(snowLayer);
 
-        if (
-            state === "scene-rain" ||
-            state === "scene-storm"
-        ) {
+        if (state === "scene-mist") createFog();
+        else clearLayer(fogLayer);
 
-            createRain();
-
-        } else {
-
-            clearLayer(
-                rainLayer
-            );
-        }
-
-        if (
-            state === "scene-snow"
-        ) {
-
-            createSnow();
-
-        } else {
-
-            clearLayer(
-                snowLayer
-            );
-        }
-
-        if (
-            state === "scene-mist"
-        ) {
-
-            createFog();
-
-        } else {
-
-            clearLayer(
-                fogLayer
-            );
-        }
-
-        if (
-            state === "scene-hot"
-        ) {
-
-            createHeatWaves();
-
-        } else {
-
-            clearLayer(
-                heatLayer
-            );
-        }
+        if (state === "scene-hot") createHeatWaves();
+        else clearLayer(heatLayer);
     }
-
-    /* =========================================================
-       RAIN
-    ========================================================= */
 
     function createRain() {
-
         if (!rainLayer) return;
-
         rainLayer.innerHTML = "";
-
-        for (
-            let i = 0;
-            i < 120;
-            i++
-        ) {
-
-            const drop =
-                document.createElement(
-                    "span"
-                );
-
-            drop.className =
-                "rain-drop";
-
-            drop.style.setProperty(
-                "--rain-left",
-                `${Math.random() * 100}%`
-            );
-
-            drop.style.setProperty(
-                "--rain-speed",
-                `${0.45 + Math.random() * 0.6}s`
-            );
-
-            drop.style.setProperty(
-                "--rain-delay",
-                `${Math.random() * 2}s`
-            );
-
-            rainLayer.appendChild(
-                drop
-            );
+        for (let i = 0; i < 120; i++) {
+            const drop = document.createElement("span");
+            drop.className = "rain-drop";
+            drop.style.setProperty("--rain-left", `${Math.random() * 100}%`);
+            drop.style.setProperty("--rain-speed", `${0.45 + Math.random() * 0.6}s`);
+            drop.style.setProperty("--rain-delay", `${Math.random() * 2}s`);
+            rainLayer.appendChild(drop);
         }
     }
-
-    /* =========================================================
-       SNOW
-    ========================================================= */
 
     function createSnow() {
-
         if (!snowLayer) return;
-
         snowLayer.innerHTML = "";
-
-        for (
-            let i = 0;
-            i < 70;
-            i++
-        ) {
-
-            const snow =
-                document.createElement(
-                    "span"
-                );
-
-            snow.className =
-                "snowflake";
-
-            snow.style.setProperty(
-                "--snow-left",
-                `${Math.random() * 100}%`
-            );
-
-            snow.style.setProperty(
-                "--snow-size",
-                `${3 + Math.random() * 6}px`
-            );
-
-            snow.style.setProperty(
-                "--snow-speed",
-                `${4 + Math.random() * 6}s`
-            );
-
-            snow.style.setProperty(
-                "--snow-delay",
-                `${Math.random() * 5}s`
-            );
-
-            snowLayer.appendChild(
-                snow
-            );
+        for (let i = 0; i < 70; i++) {
+            const snow = document.createElement("span");
+            snow.className = "snowflake";
+            snow.style.setProperty("--snow-left", `${Math.random() * 100}%`);
+            snow.style.setProperty("--snow-size", `${3 + Math.random() * 6}px`);
+            snow.style.setProperty("--snow-speed", `${4 + Math.random() * 6}s`);
+            snow.style.setProperty("--snow-delay", `${Math.random() * 5}s`);
+            snowLayer.appendChild(snow);
         }
     }
-
-    /* =========================================================
-       FOG
-    ========================================================= */
 
     function createFog() {
-
         if (!fogLayer) return;
-
         fogLayer.innerHTML = "";
-
-        for (
-            let i = 0;
-            i < 6;
-            i++
-        ) {
-
-            const fog =
-                document.createElement(
-                    "span"
-                );
-
-            fog.className =
-                "fog-orb";
-
-            fog.style.setProperty(
-                "--fog-left",
-                `${Math.random() * 90}%`
-            );
-
-            fog.style.setProperty(
-                "--fog-top",
-                `${20 + Math.random() * 60}%`
-            );
-
-            fog.style.setProperty(
-                "--fog-speed",
-                `${7 + Math.random() * 8}s`
-            );
-
-            fogLayer.appendChild(
-                fog
-            );
+        for (let i = 0; i < 6; i++) {
+            const fog = document.createElement("span");
+            fog.className = "fog-orb";
+            fog.style.setProperty("--fog-left", `${Math.random() * 90}%`);
+            fog.style.setProperty("--fog-top", `${20 + Math.random() * 60}%`);
+            fog.style.setProperty("--fog-speed", `${7 + Math.random() * 8}s`);
+            fogLayer.appendChild(fog);
         }
     }
 
-    /* =========================================================
-       HEAT WAVES
-    ========================================================= */
-
     function createHeatWaves() {
-
         if (!heatLayer) return;
-
         heatLayer.innerHTML = "";
-
-        for (
-            let i = 0;
-            i < 7;
-            i++
-        ) {
-
-            const wave =
-                document.createElement(
-                    "span"
-                );
-
-            wave.className =
-                "heat-wave";
-
-            wave.style.setProperty(
-                "--heat-left",
-                `${5 + Math.random() * 90}%`
-            );
-
-            wave.style.setProperty(
-                "--heat-speed",
-                `${2 + Math.random() * 2}s`
-            );
-
-            wave.style.setProperty(
-                "--heat-delay",
-                `${Math.random() * 2}s`
-            );
-
-            heatLayer.appendChild(
-                wave
-            );
+        for (let i = 0; i < 7; i++) {
+            const wave = document.createElement("span");
+            wave.className = "heat-wave";
+            wave.style.setProperty("--heat-left", `${5 + Math.random() * 90}%`);
+            wave.style.setProperty("--heat-speed", `${2 + Math.random() * 2}s`);
+            wave.style.setProperty("--heat-delay", `${Math.random() * 2}s`);
+            heatLayer.appendChild(wave);
         }
     }
 
     function clearLayer(layer) {
-
-        if (layer) {
-            layer.innerHTML = "";
-        }
+        if (layer) layer.innerHTML = "";
     }
 
     /* =========================================================
        AI CHAT
     ========================================================= */
 
-    async function askWeatherAI(
-        question
-    ) {
-
-        if (
-            !question ||
-            !question.trim()
-        ) {
-
-            showError(
-                t("enterQuestion")
-            );
-
+    async function askWeatherAI(question) {
+        if (!question || !question.trim()) {
+            showError(t("enterQuestion"));
             return;
         }
 
         if (!currentWeather) {
-
-            showError(
-                t("searchFirst")
-            );
-
+            showError(t("searchFirst"));
             return;
         }
 
-        /*
-         * Capture language at request time.
-         * This prevents a language change during
-         * the request from causing inconsistencies.
-         */
-        const requestLanguage =
-            getSelectedLanguage();
-
-        addUserMessage(
-            question
-        );
-
+        const requestLanguage = getSelectedLanguage();
+        addUserMessage(question);
         showTyping();
 
         try {
-
             const exactCoordinates =
                 Number.isFinite(Number(currentWeather.latitude)) &&
                 Number.isFinite(Number(currentWeather.longitude));
@@ -2255,574 +1020,269 @@ document.addEventListener("DOMContentLoaded", () => {
                     language: requestLanguage
                 };
 
-            const response =
-                await fetch(
-                    exactCoordinates
-                        ? "/ask-coordinates"
-                        : "/ask",
-                    {
-                        method: "POST",
-
-                        headers: {
-                            "Content-Type":
-                                "application/json"
-                        },
-
-                        body: JSON.stringify(aiPayload)
-                    }
-                );
-
-            const data =
-                await parseResponse(
-                    response
-                );
-
-            if (!response.ok) {
-
-                throw new Error(
-                    data.error ||
-                    t("aiError")
-                );
-            }
-
-            hideTyping();
-
-            const answer =
-                data.answer ||
-                t("aiError");
-
-            addAIMessage(
-                answer
+            const response = await fetch(
+                exactCoordinates ? "/ask-coordinates" : "/ask",
+                {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(aiPayload)
+                }
             );
 
-            /*
-             * Speak answer in selected language.
-             */
-            if (
-                speechEnabled &&
-                data.answer
-            ) {
+            const data = await parseResponse(response);
+            if (!response.ok) throw new Error(data.error || t("aiError"));
 
-                speakText(
-                    data.answer,
-                    requestLanguage
-                );
+            hideTyping();
+            const answer = data.answer || t("aiError");
+            addAIMessage(answer);
+
+            if (speechEnabled && data.answer) {
+                speakText(data.answer, requestLanguage);
             }
-
         } catch (error) {
-
-            console.error(
-                "AI Error:",
-                error
-            );
-
+            console.error("AI Error:", error);
             hideTyping();
-
-            addAIMessage(
-                t("aiError")
-            );
-
-            showError(
-                error.message ||
-                t("aiError")
-            );
+            addAIMessage(t("aiError"));
+            showError(error.message || t("aiError"));
         }
     }
 
     function sendQuestion() {
-
-        const question =
-            questionInput
-                ? questionInput.value.trim()
-                : "";
-
+        const question = questionInput ? questionInput.value.trim() : "";
         if (!question) return;
 
         if (questionInput) {
-
-            questionInput.value =
-                "";
-
+            questionInput.value = "";
             autoResizeTextarea();
         }
 
-        askWeatherAI(
-            question
-        );
+        askWeatherAI(question);
     }
 
     /* =========================================================
        CHAT UI
     ========================================================= */
 
-    function addUserMessage(
-        message
-    ) {
-
+    function addUserMessage(message) {
         if (!chatContainer) return;
-
-        const wrapper =
-            document.createElement(
-                "div"
-            );
-
-        wrapper.className =
-            "user-message";
-
+        const wrapper = document.createElement("div");
+        wrapper.className = "user-message";
         wrapper.innerHTML = `
             <div class="message-content user-content">
-                <div class="message-name">
-                    ${getUserLabel()}
-                </div>
-
+                <div class="message-name">${getUserLabel()}</div>
                 <p></p>
-
-                <div class="message-time">
-                    ${getCurrentTime()}
-                </div>
+                <div class="message-time">${getCurrentTime()}</div>
             </div>
-
-            <div class="message-avatar user-avatar">
-                👤
-            </div>
+            <div class="message-avatar user-avatar">👤</div>
         `;
 
-        const paragraph =
-            wrapper.querySelector(
-                "p"
-            );
+        const paragraph = wrapper.querySelector("p");
+        if (paragraph) paragraph.textContent = message;
 
-        if (paragraph) {
-
-            paragraph.textContent =
-                message;
-        }
-
-        chatContainer.appendChild(
-            wrapper
-        );
-
+        chatContainer.appendChild(wrapper);
         scrollChatToBottom();
     }
 
-    function addAIMessage(
-        message
-    ) {
-
+    function addAIMessage(message) {
         if (!chatContainer) return;
-
-        const wrapper =
-            document.createElement(
-                "div"
-            );
-
-        wrapper.className =
-            "ai-message";
-
+        const wrapper = document.createElement("div");
+        wrapper.className = "ai-message";
         wrapper.innerHTML = `
-            <div class="message-avatar">
-                🤖
-            </div>
-
+            <div class="message-avatar">🤖</div>
             <div class="message-content">
-                <div class="message-name">
-                    WeatherGPT
-                </div>
-
+                <div class="message-name">WeatherGPT</div>
                 <p></p>
-
-                <div class="message-time">
-                    ${getCurrentTime()}
-                </div>
+                <div class="message-time">${getCurrentTime()}</div>
             </div>
         `;
 
-        const paragraph =
-            wrapper.querySelector(
-                "p"
-            );
+        const paragraph = wrapper.querySelector("p");
+        if (paragraph) paragraph.textContent = message;
 
-        if (paragraph) {
-
-            paragraph.textContent =
-                message;
-        }
-
-        chatContainer.appendChild(
-            wrapper
-        );
-
+        chatContainer.appendChild(wrapper);
         scrollChatToBottom();
     }
 
-    function getUserLabel() {
-
-        return t("userLabel");
-    }
+    function getUserLabel() { return t("userLabel"); }
 
     function scrollChatToBottom() {
-
         if (!chatContainer) return;
-
-        chatContainer.scrollTop =
-            chatContainer.scrollHeight;
+        chatContainer.scrollTop = chatContainer.scrollHeight;
     }
 
     function showTyping() {
-
         if (!typingIndicator) return;
+        const thinking = document.getElementById("thinkingText");
+        if (thinking) thinking.textContent = t("thinking");
 
-        /*
-         * Translate typing text every time.
-         */
-        const thinking =
-            document.getElementById(
-                "thinkingText"
-            );
-
-        if (thinking) {
-            thinking.textContent =
-                t("thinking");
-        }
-
-        typingIndicator.classList.remove(
-            "hidden"
-        );
-
+        typingIndicator.classList.remove("hidden");
         scrollChatToBottom();
     }
 
     function hideTyping() {
-
         if (!typingIndicator) return;
-
-        typingIndicator.classList.add(
-            "hidden"
-        );
+        typingIndicator.classList.add("hidden");
     }
 
     function getCurrentTime() {
-
-        return new Date().toLocaleTimeString(
-            getLocale(),
-            {
-                hour: "2-digit",
-                minute: "2-digit"
-            }
-        );
+        return new Date().toLocaleTimeString(getLocale(), { hour: "2-digit", minute: "2-digit" });
     }
 
     function getLocale() {
-
-        const language =
-            getSelectedLanguage();
-
-        if (language === "te") {
-            return "te-IN";
-        }
-
-        if (language === "hi") {
-            return "hi-IN";
-        }
-
+        const language = getSelectedLanguage();
+        if (language === "te") return "te-IN";
+        if (language === "hi") return "hi-IN";
         return "en-IN";
     }
 
     /* =========================================================
-       VOICE RECOGNITION
+       UNIFIED ROBUST VOICE RECOGNITION (FIXED)
     ========================================================= */
 
     function initializeVoiceRecognition() {
-
-        const SpeechRecognition =
-            window.SpeechRecognition ||
-            window.webkitSpeechRecognition;
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
         if (!SpeechRecognition) {
-
-            if (voiceStatus) {
-
-                voiceStatus.textContent =
-                    t("voiceUnsupported");
-            }
-
+            if (voiceStatus) voiceStatus.textContent = t("voiceUnsupported");
             if (micBtn) {
                 micBtn.disabled = true;
+                micBtn.style.opacity = "0.5";
             }
-
             return;
         }
 
-        recognition =
-            new SpeechRecognition();
-
-        recognition.continuous =
-            false;
-
-        recognition.interimResults =
-            false;
-
-        recognition.lang =
-            getRecognitionLanguage();
+        recognition = new SpeechRecognition();
+        recognition.continuous = false;
+        recognition.interimResults = false;
+        recognition.maxAlternatives = 1;
+        recognition.lang = getRecognitionLanguage();
 
         recognition.onstart = () => {
-
             isListening = true;
-
-            if (micBtn) {
-
-                micBtn.classList.add(
-                    "recording"
-                );
-            }
-
+            if (micBtn) micBtn.classList.add("recording");
             if (voiceStatus) {
-
-                voiceStatus.textContent =
-                    getVoiceListeningMessage();
-
-                voiceStatus.classList.add(
-                    "active"
-                );
+                voiceStatus.textContent = getVoiceListeningMessage();
+                voiceStatus.classList.add("active");
             }
         };
 
-        recognition.onresult =
-            event => {
-
-                try {
-
-                    const transcript =
-                        event.results[0][0]
-                            .transcript;
-
-                    if (questionInput) {
-
-                        questionInput.value =
-                            transcript;
-
-                        autoResizeTextarea();
-                    }
-
-                    isListening =
-                        false;
-
-                    if (micBtn) {
-
-                        micBtn.classList.remove(
-                            "recording"
-                        );
-                    }
-
-                    if (voiceStatus) {
-
-                        voiceStatus.textContent =
-                            getVoiceRecognizedMessage();
-
-                        voiceStatus.classList.remove(
-                            "active"
-                        );
-                    }
-
-                    if (
-                        transcript.trim()
-                    ) {
-
-                        askWeatherAI(
-                            transcript
-                        );
-                    }
-
-                } catch (error) {
-
-                    console.error(
-                        "Voice Result Error:",
-                        error
-                    );
-                }
-            };
-
-        recognition.onerror =
-            event => {
-
-                console.error(
-                    "Voice Error:",
-                    event.error
-                );
-
-                isListening =
-                    false;
-
-                if (micBtn) {
-
-                    micBtn.classList.remove(
-                        "recording"
-                    );
+        recognition.onresult = event => {
+            try {
+                const transcript = event.results[0][0].transcript;
+                if (questionInput) {
+                    questionInput.value = transcript;
+                    autoResizeTextarea();
                 }
 
                 if (voiceStatus) {
-
-                    voiceStatus.classList.remove(
-                        "active"
-                    );
-
-                    voiceStatus.textContent =
-                        getVoiceErrorMessage(
-                            event.error
-                        );
+                    voiceStatus.textContent = `${getVoiceRecognizedMessage()}: "${transcript}"`;
+                    voiceStatus.classList.remove("active");
                 }
-            };
+
+                if (transcript && transcript.trim()) {
+                    askWeatherAI(transcript.trim());
+                }
+            } catch (error) {
+                console.error("Voice Result Error:", error);
+            }
+        };
+
+        recognition.onerror = event => {
+            console.error("Voice Error:", event.error);
+            isListening = false;
+            if (micBtn) micBtn.classList.remove("recording");
+            if (voiceStatus) {
+                voiceStatus.classList.remove("active");
+                voiceStatus.textContent = getVoiceErrorMessage(event.error);
+            }
+        };
 
         recognition.onend = () => {
-
-            isListening =
-                false;
-
-            if (micBtn) {
-
-                micBtn.classList.remove(
-                    "recording"
-                );
-            }
-
+            isListening = false;
+            if (micBtn) micBtn.classList.remove("recording");
             if (voiceStatus) {
-
-                voiceStatus.classList.remove(
-                    "active"
-                );
-
-                if (!isListening) {
-
-                    voiceStatus.textContent =
-                        t("voiceReady");
-                }
+                voiceStatus.classList.remove("active");
+                setTimeout(() => {
+                    if (!isListening && voiceStatus) {
+                        voiceStatus.textContent = t("voiceReady");
+                    }
+                }, 2500);
             }
         };
     }
 
-    function toggleMicrophone() {
-
+    async function toggleMicrophone() {
         if (!recognition) {
-
-            showError(
-                t("voiceUnsupported")
-            );
-
+            showError(t("voiceUnsupported"));
             return;
         }
 
         if (isListening) {
-
             recognition.stop();
-
             return;
         }
 
-        recognition.lang =
-            getRecognitionLanguage();
+        // Explicitly request microphone stream permission from browser
+        try {
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                await navigator.mediaDevices.getUserMedia({ audio: true });
+            }
+        } catch (err) {
+            console.error("Microphone permission denied:", err);
+            if (voiceStatus) voiceStatus.textContent = t("microphoneDenied");
+            alert("Microphone access is blocked! Please allow microphone permission in your browser URL bar.");
+            return;
+        }
+
+        recognition.lang = getRecognitionLanguage();
 
         try {
-
             recognition.start();
-
         } catch (error) {
-
-            console.error(
-                "Microphone Start Error:",
-                error
-            );
+            console.warn("Microphone start collision, restarting session...", error);
+            try {
+                recognition.stop();
+                setTimeout(() => recognition.start(), 200);
+            } catch (e) {
+                console.error("Critical Voice Error:", e);
+            }
         }
     }
 
     function getRecognitionLanguage() {
-
-        const language =
-            getSelectedLanguage();
-
-        if (language === "te") {
-            return "te-IN";
-        }
-
-        if (language === "hi") {
-            return "hi-IN";
-        }
-
-        return "en-IN";
+        const language = getSelectedLanguage();
+        if (language === "te") return "te-IN";
+        if (language === "hi") return "hi-IN";
+        return "en-US";
     }
 
-    function getVoiceListeningMessage() {
+    function getVoiceListeningMessage() { return t("listening"); }
+    function getVoiceRecognizedMessage() { return t("recognized"); }
+    function getLanguageChangedMessage() { return t("languageChanged"); }
 
-        return t("listening");
-    }
-
-    function getVoiceRecognizedMessage() {
-
-        return t("recognized");
-    }
-
-    function getLanguageChangedMessage() {
-
-        return t("languageChanged");
-    }
-
-    function getVoiceErrorMessage(
-        error
-    ) {
-
-        const language =
-            getSelectedLanguage();
-
+    function getVoiceErrorMessage(error) {
+        const language = getSelectedLanguage();
         const messages = {
-
             en: {
-                "not-allowed":
-                    "🎤 Microphone permission denied",
-
-                "no-speech":
-                    "No speech detected",
-
-                "audio-capture":
-                    "Microphone unavailable",
-
-                "network":
-                    "Voice network error",
-
-                "aborted":
-                    "Voice recognition stopped"
+                "not-allowed": "🎤 Microphone permission denied. Check browser settings.",
+                "no-speech": "No speech detected. Please try speaking again.",
+                "audio-capture": "Microphone hardware unavailable.",
+                "network": "Speech network error. Ensure internet connection.",
+                "aborted": "Voice recognition stopped"
             },
-
             te: {
-                "not-allowed":
-                    "🎤 మైక్రోఫోన్ అనుమతి నిరాకరించబడింది",
-
-                "no-speech":
-                    "వాయిస్ గుర్తించబడలేదు",
-
-                "audio-capture":
-                    "మైక్రోఫోన్ అందుబాటులో లేదు",
-
-                "network":
-                    "వాయిస్ నెట్‌వర్క్ లోపం",
-
-                "aborted":
-                    "వాయిస్ గుర్తింపు ఆపబడింది"
+                "not-allowed": "🎤 మైక్రోఫోన్ అనుమతి నిరాకరించబడింది",
+                "no-speech": "వాయిస్ గుర్తించబడలేదు",
+                "audio-capture": "మైక్రోఫోన్ అందుబాటులో లేదు",
+                "network": "వాయిస్ నెట్‌వర్క్ లోపం",
+                "aborted": "వాయిస్ గుర్తింపు ఆపబడింది"
             },
-
             hi: {
-                "not-allowed":
-                    "🎤 माइक्रोफ़ोन की अनुमति नहीं है",
-
-                "no-speech":
-                    "कोई आवाज़ नहीं मिली",
-
-                "audio-capture":
-                    "माइक्रोफ़ोन उपलब्ध नहीं है",
-
-                "network":
-                    "वॉयस नेटवर्क त्रुटि",
-
-                "aborted":
-                    "वॉयस पहचान बंद कर दी गई"
+                "not-allowed": "🎤 माइक्रोफ़ोन की अनुमति नहीं है",
+                "no-speech": "कोई आवाज़ नहीं मिली",
+                "audio-capture": "माइक्रोफ़ोन उपलब्ध नहीं है",
+                "network": "वॉयस नेटवर्क त्रुटि",
+                "aborted": "वॉयस पहचान बंद कर दी गई"
             }
         };
 
@@ -2834,99 +1294,47 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* =========================================================
-       TEXT TO SPEECH
+       TEXT TO SPEECH (VOICE OUTPUT)
     ========================================================= */
 
-    function speakText(
-        text,
-        language = getSelectedLanguage()
-    ) {
-
-        if (
-            !speechEnabled ||
-            !("speechSynthesis" in window) ||
-            !text
-        ) {
-
-            return;
-        }
+    function speakText(text, language = getSelectedLanguage()) {
+        if (!speechEnabled || !("speechSynthesis" in window) || !text) return;
 
         window.speechSynthesis.cancel();
 
-        const speech =
-            new SpeechSynthesisUtterance(
-                text
-            );
+        // Strip markdown stars, headers, backticks so they are not read out loud
+        const cleanText = text.replace(/[*#_`-]/g, "").trim();
+        const speech = new SpeechSynthesisUtterance(cleanText);
+        speech.rate = 0.95;
+        speech.pitch = 1;
+        speech.volume = 1;
 
-        speech.rate =
-            0.95;
+        if (language === "te") speech.lang = "te-IN";
+        else if (language === "hi") speech.lang = "hi-IN";
+        else speech.lang = "en-US";
 
-        speech.pitch =
-            1;
-
-        speech.volume =
-            1;
-
-        if (language === "te") {
-
-            speech.lang =
-                "te-IN";
-
-        } else if (
-            language === "hi"
-        ) {
-
-            speech.lang =
-                "hi-IN";
-
-        } else {
-
-            speech.lang =
-                "en-IN";
-        }
-
-        window.speechSynthesis.speak(
-            speech
-        );
+        window.speechSynthesis.speak(speech);
     }
 
     /* =========================================================
-       TEXTAREA
+       TEXTAREA AUTO-RESIZE
     ========================================================= */
 
     function autoResizeTextarea() {
-
         if (!questionInput) return;
-
-        questionInput.style.height =
-            "auto";
-
-        questionInput.style.height =
-            `${Math.min(
-                questionInput.scrollHeight,
-                120
-            )}px`;
+        questionInput.style.height = "auto";
+        questionInput.style.height = `${Math.min(questionInput.scrollHeight, 120)}px`;
     }
 
     /* =========================================================
        SMART INSIGHTS
     ========================================================= */
 
-    async function getSmartInsights(
-        city,
-        requestId = ++insightsRequestId
-    ) {
-
+    async function getSmartInsights(city, requestId = ++insightsRequestId) {
         if (!city) return;
-
-        /*
-         * Capture current language.
-         */
-        const selectedLanguage =
-            getSelectedLanguage();
+        const selectedLanguage = getSelectedLanguage();
 
         try {
-
             const exactCoordinates =
                 currentWeather &&
                 Number.isFinite(Number(currentWeather.latitude)) &&
@@ -2944,411 +1352,141 @@ document.addEventListener("DOMContentLoaded", () => {
                     language: selectedLanguage
                 };
 
-            const response =
-                await fetch(
-                    exactCoordinates
-                        ? "/insights-coordinates"
-                        : "/insights",
-                    {
-                        method: "POST",
-
-                        headers: {
-                            "Content-Type":
-                                "application/json"
-                        },
-
-                        body: JSON.stringify(insightPayload)
-                    }
-                );
-
-            const data =
-                await parseResponse(
-                    response
-                );
-
-            if (!response.ok) {
-
-                throw new Error(
-                    data.error ||
-                    t("analysisUnavailable")
-                );
-            }
-
-            /*
-             * Ignore old request.
-             */
-            if (
-                requestId !==
-                insightsRequestId
-            ) {
-
-                return;
-            }
-
-            if (
-                !data ||
-                typeof data.insights !==
-                    "string"
-            ) {
-
-                throw new Error(
-                    "Invalid Smart Insights response."
-                );
-            }
-
-            parseInsights(
-                data.insights
+            const response = await fetch(
+                exactCoordinates ? "/insights-coordinates" : "/insights",
+                {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(insightPayload)
+                }
             );
 
+            const data = await parseResponse(response);
+            if (!response.ok) throw new Error(data.error || t("analysisUnavailable"));
+
+            if (requestId !== insightsRequestId) return;
+            if (!data || typeof data.insights !== "string") {
+                throw new Error("Invalid Smart Insights response.");
+            }
+
+            parseInsights(data.insights);
         } catch (error) {
-
-            if (
-                requestId !==
-                insightsRequestId
-            ) {
-
-                return;
-            }
-
-            console.error(
-                "Insights Error:",
-                error
-            );
-
+            if (requestId !== insightsRequestId) return;
+            console.error("Insights Error:", error);
             displayInsightError();
         }
     }
 
     function showInsightLoading() {
-
-        const message =
-            getInsightLoadingMessage();
-
-        displayInsight(
-            insightStatus,
-            [message]
-        );
-
-        displayInsight(
-            insightAlert,
-            [message]
-        );
-
-        displayInsight(
-            insightClothing,
-            [message]
-        );
-
-        displayInsight(
-            insightHealth,
-            [message]
-        );
-
-        displayInsight(
-            insightTravel,
-            [message]
-        );
+        const message = t("analyzing");
+        displayInsight(insightStatus, [message]);
+        displayInsight(insightAlert, [message]);
+        displayInsight(insightClothing, [message]);
+        displayInsight(insightHealth, [message]);
+        displayInsight(insightTravel, [message]);
     }
-
-    function getInsightLoadingMessage() {
-
-        return t("analyzing");
-    }
-
-    /* =========================================================
-       PARSE SMART INSIGHTS
-    ========================================================= */
 
     function parseInsights(text) {
-
         if (!text) {
-
             displayInsightError();
-
             return;
         }
 
-        displayInsight(
-            insightStatus,
-            extractBulletPoints(
-                text,
-                "STATUS"
-            )
-        );
-
-        displayInsight(
-            insightAlert,
-            extractBulletPoints(
-                text,
-                "ALERT"
-            )
-        );
-
-        displayInsight(
-            insightClothing,
-            extractBulletPoints(
-                text,
-                "CLOTHING"
-            )
-        );
-
-        displayInsight(
-            insightHealth,
-            extractBulletPoints(
-                text,
-                "HEALTH"
-            )
-        );
-
-        displayInsight(
-            insightTravel,
-            extractBulletPoints(
-                text,
-                "TRAVEL"
-            )
-        );
+        displayInsight(insightStatus, extractBulletPoints(text, "STATUS"));
+        displayInsight(insightAlert, extractBulletPoints(text, "ALERT"));
+        displayInsight(insightClothing, extractBulletPoints(text, "CLOTHING"));
+        displayInsight(insightHealth, extractBulletPoints(text, "HEALTH"));
+        displayInsight(insightTravel, extractBulletPoints(text, "TRAVEL"));
     }
 
-    function extractBulletPoints(
-        text,
-        sectionName
-    ) {
+    function extractBulletPoints(text, sectionName) {
+        const sections = ["STATUS", "ALERT", "CLOTHING", "HEALTH", "TRAVEL"];
+        const currentIndex = sections.indexOf(sectionName);
+        if (currentIndex === -1) return [];
 
-        const sections = [
-            "STATUS",
-            "ALERT",
-            "CLOTHING",
-            "HEALTH",
-            "TRAVEL"
-        ];
+        const nextSection = sections[currentIndex + 1];
+        const startPattern = new RegExp(`(?:\\*{1,3}|#{1,6})?\\s*${sectionName}\\s*:?\\s*(?:\\*{1,3})?`, "i");
+        const startMatch = text.match(startPattern);
 
-        const currentIndex =
-            sections.indexOf(
-                sectionName
-            );
+        if (!startMatch || startMatch.index === undefined) return [];
 
-        if (
-            currentIndex === -1
-        ) {
-
-            return [];
-        }
-
-        const nextSection =
-            sections[
-                currentIndex + 1
-            ];
-
-        const startPattern =
-            new RegExp(
-                `(?:\\*{1,3}|#{1,6})?\\s*${sectionName}\\s*:?\\s*(?:\\*{1,3})?`,
-                "i"
-            );
-
-        const startMatch =
-            text.match(
-                startPattern
-            );
-
-        if (
-            !startMatch ||
-            startMatch.index === undefined
-        ) {
-
-            return [];
-        }
-
-        let sectionText =
-            text.substring(
-                startMatch.index +
-                startMatch[0].length
-            );
+        let sectionText = text.substring(startMatch.index + startMatch[0].length);
 
         if (nextSection) {
-
-            const nextPattern =
-                new RegExp(
-                    `(?:\\*{1,3}|#{1,6})?\\s*${nextSection}\\s*:?\\s*(?:\\*{1,3})?`,
-                    "i"
-                );
-
-            const nextMatch =
-                sectionText.match(
-                    nextPattern
-                );
-
-            if (
-                nextMatch &&
-                nextMatch.index !== undefined
-            ) {
-
-                sectionText =
-                    sectionText.substring(
-                        0,
-                        nextMatch.index
-                    );
+            const nextPattern = new RegExp(`(?:\\*{1,3}|#{1,6})?\\s*${nextSection}\\s*:?\\s*(?:\\*{1,3})?`, "i");
+            const nextMatch = sectionText.match(nextPattern);
+            if (nextMatch && nextMatch.index !== undefined) {
+                sectionText = sectionText.substring(0, nextMatch.index);
             }
         }
 
         return sectionText
             .split(/\r?\n/)
-            .map(
-                line =>
-                    line
-                        .replace(
-                            /^\s*[-•*]\s*/,
-                            ""
-                        )
-                        .replace(
-                            /^\s*\d+[.)]\s*/,
-                            ""
-                        )
-                        .replace(
-                            /^\s*#+\s*/,
-                            ""
-                        )
-                        .replace(
-                            /\*\*/g,
-                            ""
-                        )
-                        .trim()
+            .map(line =>
+                line
+                    .replace(/^\s*[-•*]\s*/, "")
+                    .replace(/^\s*\d+[.)]\s*/, "")
+                    .replace(/^\s*#+\s*/, "")
+                    .replace(/\*\*/g, "")
+                    .trim()
             )
-            .filter(
-                line =>
-                    line.length > 0
-            )
+            .filter(line => line.length > 0)
             .slice(0, 3);
     }
 
-    function displayInsight(
-        element,
-        points
-    ) {
-
+    function displayInsight(element, points) {
         if (!element) return;
+        element.innerHTML = "";
 
-        element.innerHTML =
-            "";
-
-        if (
-            !points ||
-            points.length === 0
-        ) {
-
-            const li =
-                document.createElement(
-                    "li"
-                );
-
-            li.textContent =
-                t("noInformation");
-
-            element.appendChild(
-                li
-            );
-
+        if (!points || points.length === 0) {
+            const li = document.createElement("li");
+            li.textContent = t("noInformation");
+            element.appendChild(li);
             return;
         }
 
-        points.forEach(
-            point => {
-
-                const li =
-                    document.createElement(
-                        "li"
-                    );
-
-                li.textContent =
-                    point;
-
-                element.appendChild(
-                    li
-                );
-            }
-        );
+        points.forEach(point => {
+            const li = document.createElement("li");
+            li.textContent = point;
+            element.appendChild(li);
+        });
     }
 
     function displayInsightError() {
-
-        const message =
-            t("analysisUnavailable");
-
-        displayInsight(
-            insightStatus,
-            [message]
-        );
-
-        displayInsight(
-            insightAlert,
-            [message]
-        );
-
-        displayInsight(
-            insightClothing,
-            [message]
-        );
-
-        displayInsight(
-            insightHealth,
-            [message]
-        );
-
-        displayInsight(
-            insightTravel,
-            [message]
-        );
+        const message = t("analysisUnavailable");
+        displayInsight(insightStatus, [message]);
+        displayInsight(insightAlert, [message]);
+        displayInsight(insightClothing, [message]);
+        displayInsight(insightHealth, [message]);
+        displayInsight(insightTravel, [message]);
     }
 
     /* =========================================================
-       ERROR
+       ERROR BOX
     ========================================================= */
 
     function showError(message) {
-
         if (!errorBox) {
-
-            console.error(
-                message
-            );
-
+            console.error(message);
             return;
         }
-
-        errorBox.textContent =
-            message;
-
-        errorBox.classList.add(
-            "show"
-        );
+        errorBox.textContent = message;
+        errorBox.classList.add("show");
     }
 
     function hideError() {
-
         if (!errorBox) return;
-
-        errorBox.textContent =
-            "";
-
-        errorBox.classList.remove(
-            "show"
-        );
+        errorBox.textContent = "";
+        errorBox.classList.remove("show");
     }
-
-    /* =========================================================
-       CAPITALIZE
-    ========================================================= */
 
     function capitalize(text) {
-
         if (!text) return "";
-
-        return (
-            text.charAt(0).toUpperCase() +
-            text.slice(1)
-        );
+        return text.charAt(0).toUpperCase() + text.slice(1);
     }
+
     /* =========================================================
-       WEATHER HISTORY / FORECAST / GRAPH - ADDITION ONLY
+       WEATHER HISTORY / FORECAST / GRAPH
     ========================================================= */
 
     let climateChart = null;
@@ -3505,5 +1643,4 @@ document.addEventListener("DOMContentLoaded", () => {
     initializeClimateFeatures();
     updateClimateButtonLabels();
     languageSelect?.addEventListener("change", () => setTimeout(updateClimateButtonLabels, 0));
-
 });
