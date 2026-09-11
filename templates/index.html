@@ -9,6 +9,7 @@
 
     <link rel="stylesheet"
           href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 </head>
 
 <body>
@@ -54,6 +55,51 @@
 
 
 <main class="container">
+
+    <!-- =====================================================
+         LANGUAGE SELECTOR BAR
+         Positioned between AI-POWERED WEATHER tag and 
+         Live Weather Animation Scene
+    ====================================================== -->
+
+    <div class="top-language-bar">
+
+        <span class="top-language-tag" id="heroTag">
+            AI-POWERED WEATHER
+        </span>
+
+        <div class="top-language-selector-wrap">
+
+            <label for="languageSelect" class="lang-label">🌐 Language:</label>
+
+            <select id="languageSelect">
+
+                <option value="auto">
+                    Auto Detect
+                </option>
+
+                <option value="en">
+                    English
+                </option>
+
+                <option value="te">
+                    తెలుగు
+                </option>
+
+                <option value="hi">
+                    हिन्दी
+                </option>
+
+            </select>
+
+            <span id="voiceStatus">
+                Voice ready
+            </span>
+
+        </div>
+
+    </div>
+
 
     <!-- =====================================================
          3D WEATHER SCENE
@@ -163,14 +209,6 @@
 
         <div>
 
-            <span id="heroTag"
-                  class="hero-tag">
-
-                AI-POWERED WEATHER
-
-            </span>
-
-
             <h1 id="heroTitle">
 
                 Understand the
@@ -223,12 +261,7 @@
             </div>
 
 
-            <!-- =================================================
-                 LOCATION SUGGESTIONS
-
-                 JavaScript automatically fills this area
-                 when the user types a location.
-            ================================================== -->
+            <!-- LOCATION SUGGESTIONS -->
 
             <div id="locationResults"
                  class="location-results">
@@ -294,9 +327,7 @@
             </div>
 
 
-            <!-- =================================================
-                 TEMPERATURE
-            ================================================== -->
+            <!-- TEMPERATURE -->
 
             <div class="temperature-area">
 
@@ -317,9 +348,7 @@
             </div>
 
 
-            <!-- =================================================
-                 WEATHER DESCRIPTION
-            ================================================== -->
+            <!-- WEATHER DESCRIPTION -->
 
             <div id="description"
                  class="description">
@@ -329,9 +358,7 @@
             </div>
 
 
-            <!-- =================================================
-                 WEATHER METRICS
-            ================================================== -->
+            <!-- WEATHER METRICS -->
 
             <div class="weather-metrics">
 
@@ -500,9 +527,7 @@
             </div>
 
 
-            <!-- =================================================
-                 WEATHER OVERVIEW
-            ================================================== -->
+            <!-- WEATHER OVERVIEW -->
 
             <div class="overview">
 
@@ -533,9 +558,7 @@
         <div class="ai-panel">
 
 
-            <!-- =================================================
-                 AI HEADER
-            ================================================== -->
+            <!-- AI HEADER -->
 
             <div class="ai-header">
 
@@ -586,9 +609,7 @@
             </div>
 
 
-            <!-- =================================================
-                 CHAT CONTAINER
-            ================================================== -->
+            <!-- CHAT CONTAINER -->
 
             <div id="chatContainer"
                  class="chat-container">
@@ -638,9 +659,7 @@
             </div>
 
 
-            <!-- =================================================
-                 QUICK QUESTIONS
-            ================================================== -->
+            <!-- QUICK QUESTIONS -->
 
             <div class="quick-questions">
 
@@ -703,57 +722,7 @@
             </div>
 
 
-            <!-- =================================================
-                 LANGUAGE + VOICE
-            ================================================== -->
-
-            <div class="voice-controls">
-
-
-                <select id="languageSelect">
-
-                    <option value="auto">
-
-                        Auto Detect
-
-                    </option>
-
-
-                    <option value="en">
-
-                        English
-
-                    </option>
-
-
-                    <option value="te">
-
-                        తెలుగు
-
-                    </option>
-
-
-                    <option value="hi">
-
-                        हिन्दी
-
-                    </option>
-
-                </select>
-
-
-                <span id="voiceStatus">
-
-                    Voice ready
-
-                </span>
-
-            </div>
-
-
-            <!-- =================================================
-                 TYPING INDICATOR
-            ================================================== -->
+            <!-- TYPING INDICATOR -->
 
             <div id="typingIndicator"
                  class="typing-indicator hidden">
@@ -788,9 +757,7 @@
             </div>
 
 
-            <!-- =================================================
-                 CHAT INPUT (WITH VOICE MICROPHONE BUTTON)
-            ================================================== -->
+            <!-- CHAT INPUT WITH MICROPHONE -->
 
             <div class="chat-input-area">
 
@@ -798,7 +765,7 @@
                 <textarea
                     id="questionInput"
                     rows="1"
-                    placeholder="Ask WeatherGPT..."
+                    placeholder="Ask WeatherGPT or click mic to speak..."
                 ></textarea>
 
 
@@ -807,7 +774,7 @@
                     id="micBtn"
                     class="mic-button"
                     type="button"
-                    title="Speak using microphone">
+                    title="Click to speak, click again to send">
 
                     🎙️
 
@@ -871,16 +838,12 @@
         </div>
 
 
-        <!-- =================================================
-             INSIGHT CARDS
-        ================================================== -->
+        <!-- INSIGHT CARDS -->
 
         <div class="insight-grid">
 
 
-            <!-- =================================================
-                 STATUS
-            ================================================== -->
+            <!-- STATUS -->
 
             <div class="insight-card">
 
@@ -912,9 +875,7 @@
             </div>
 
 
-            <!-- =================================================
-                 ALERT
-            ================================================== -->
+            <!-- ALERT -->
 
             <div class="insight-card">
 
@@ -946,9 +907,7 @@
             </div>
 
 
-            <!-- =================================================
-                 CLOTHING
-            ================================================== -->
+            <!-- CLOTHING -->
 
             <div class="insight-card">
 
@@ -980,9 +939,7 @@
             </div>
 
 
-            <!-- =================================================
-                 HEALTH
-            ================================================== -->
+            <!-- HEALTH -->
 
             <div class="insight-card">
 
@@ -1014,9 +971,7 @@
             </div>
 
 
-            <!-- =================================================
-                 TRAVEL
-            ================================================== -->
+            <!-- TRAVEL -->
 
             <div class="insight-card">
 
@@ -1058,11 +1013,12 @@
      FOOTER
 ========================================================= -->
 
-<footer id="footerText">
-
-    WeatherGPT • Conversational AI for Weather Intelligence &
-    Climate Information
-
+<footer class="site-footer">
+    <div class="footer-container">
+        <p class="footer-copyright">
+            @ALL RIGHTS RESERVED — &ldquo;Crafting the Future of Climate Intelligence&rdquo; — TEAM CODEX PRIVATE LIMITED
+        </p>
+    </div>
 </footer>
 
 
