@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let locationSearchController = null;
     let selectedLocation = null;
 
+    // Speech Buffering
+    let finalVoiceTranscript = "";
+
     /* =========================================================
        DOM ELEMENTS
     ========================================================= */
@@ -85,17 +88,16 @@ document.addEventListener("DOMContentLoaded", () => {
             welcome: "Hello! I'm WeatherGPT. Ask me anything about the weather.",
             thinking: "WeatherGPT is thinking...",
             voiceReady: "Voice ready",
-            voiceInput: "Voice input",
+            voiceInput: "Click to speak, click again to stop & send",
             sendMessage: "Send message",
-            askQuestion: "Ask WeatherGPT...",
+            askQuestion: "Ask WeatherGPT or click mic to speak...",
             analysis: "AI WEATHER ANALYSIS",
             smartInsights: "Smart Insights",
             status: "Status",
-            alert: "Alert",
+            alert: "Alert & Precautions",
             clothing: "Clothing",
-            health: "Health",
+            health: "Health Precautions",
             travel: "Travel",
-            footer: "WeatherGPT • AI-Powered Weather Intelligence",
             weatherAssistant: "WeatherGPT is a weather assistant. Please ask a weather-related question.",
             aiError: "Sorry, I couldn't generate a response right now.",
             weatherUnavailable: "Unable to fetch weather information.",
@@ -109,14 +111,14 @@ document.addEventListener("DOMContentLoaded", () => {
             cold: "❄️ Cool atmosphere",
             clouds: "☁️ Cloudy conditions",
             clear: "☀️ Clear weather",
-            listening: "🎤 Listening... Speak now",
+            listening: "🎤 Listening... (Click mic again when finished)",
             recognized: "Voice recognized",
             languageChanged: "Language changed to English",
-            voiceUnsupported: "Voice recognition not supported",
-            microphoneDenied: "🎤 Microphone permission denied. Please allow mic in browser settings.",
-            noSpeech: "No speech detected",
+            voiceUnsupported: "Voice recognition not supported in this browser",
+            microphoneDenied: "🎤 Microphone permission denied. Check browser settings.",
+            noSpeech: "No speech detected. Please speak clearly.",
             microphoneUnavailable: "Microphone unavailable",
-            voiceNetwork: "Voice network error",
+            voiceNetwork: "Voice network error. Check internet connection.",
             voiceStopped: "Voice recognition stopped",
             analyzing: "Analyzing weather...",
             noInformation: "No additional information.",
@@ -152,17 +154,16 @@ document.addEventListener("DOMContentLoaded", () => {
             welcome: "నమస్కారం! నేను WeatherGPT. వాతావరణం గురించి ఏదైనా అడగండి.",
             thinking: "WeatherGPT ఆలోచిస్తోంది...",
             voiceReady: "వాయిస్ సిద్ధంగా ఉంది",
-            voiceInput: "వాయిస్ ఇన్‌పుట్",
+            voiceInput: "మాట్లాడటానికి మైక్ క్లిక్ చేయండి, పూర్తయ్యాక మళ్లీ క్లిక్ చేయండి",
             sendMessage: "సందేశాన్ని పంపండి",
             askQuestion: "WeatherGPTని వాతావరణం గురించి అడగండి...",
             analysis: "AI వాతావరణ విశ్లేషణ",
-            smartInsights: "స్మార్ట్ విశ్లేషణలు",
+            smartInsights: "స్మార్ట్ విశ్లేషణలు & జాగ్రత్తలు",
             status: "స్థితి",
-            alert: "హెచ్చరిక",
+            alert: "హెచ్చరిక & జాగ్రత్తలు",
             clothing: "దుస్తులు",
-            health: "ఆరోగ్యం",
+            health: "ఆరోగ్య సూచనలు",
             travel: "ప్రయాణం",
-            footer: "WeatherGPT • AI ఆధారిత వాతావరణ సమాచారం",
             weatherAssistant: "WeatherGPT ఒక వాతావరణ సహాయకుడు. దయచేసి వాతావరణానికి సంబంధించిన ప్రశ్న అడగండి.",
             aiError: "క్షమించండి, ప్రస్తుతం సమాధానం ఇవ్వలేకపోయాను.",
             weatherUnavailable: "వాతావరణ సమాచారాన్ని పొందలేకపోయాము.",
@@ -176,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
             cold: "❄️ చల్లని వాతావరణం",
             clouds: "☁️ మేఘావృతమైన వాతావరణం",
             clear: "☀️ ఆకాశం నిర్మలంగా ఉంది",
-            listening: "🎤 వింటున్నాను... మాట్లాడండి",
+            listening: "🎤 వింటున్నాను... మాట్లాడటం పూర్తయ్యాక మైక్ ఆపండి",
             recognized: "వాయిస్ గుర్తించబడింది",
             languageChanged: "భాష తెలుగులోకి మార్చబడింది",
             voiceUnsupported: "వాయిస్ గుర్తింపు ఈ బ్రౌజర్‌లో అందుబాటులో లేదు",
@@ -219,17 +220,16 @@ document.addEventListener("DOMContentLoaded", () => {
             welcome: "नमस्ते! मैं WeatherGPT हूँ। मौसम के बारे में कुछ भी पूछें।",
             thinking: "WeatherGPT सोच रहा है...",
             voiceReady: "वॉयस तैयार है",
-            voiceInput: "वॉयस इनपुट",
+            voiceInput: "बोलने के लिए माइक दबाएं, पूरा होने पर दोबारा दबाएं",
             sendMessage: "संदेश भेजें",
             askQuestion: "WeatherGPT से मौसम के बारे में पूछें...",
             analysis: "AI मौसम विश्लेषण",
-            smartInsights: "स्मार्ट विश्लेषण",
+            smartInsights: "स्मार्ट विश्लेषण और सावधानियां",
             status: "स्थिति",
-            alert: "चेतावनी",
+            alert: "चेतावनी और सावधानियां",
             clothing: "कपड़े",
-            health: "स्वास्थ्य",
+            health: "स्वास्थ्य सलाह",
             travel: "यात्रा",
-            footer: "WeatherGPT • AI-संचालित मौसम जानकारी",
             weatherAssistant: "WeatherGPT एक मौसम सहायक है। कृपया मौसम से संबंधित प्रश्न पूछें।",
             aiError: "क्षमा करें, मैं अभी उत्तर नहीं दे सका।",
             weatherUnavailable: "मौसम की जानकारी प्राप्त नहीं की जा सकी।",
@@ -243,7 +243,7 @@ document.addEventListener("DOMContentLoaded", () => {
             cold: "❄️ ठंडा मौसम",
             clouds: "☁️ बादल छाए हुए हैं",
             clear: "☀️ साफ मौसम",
-            listening: "🎤 सुन रहा हूँ... बोलिए",
+            listening: "🎤 सुन रहा हूँ... बोलने के बाद माइक बंद करें",
             recognized: "आवाज़ पहचानी गई",
             languageChanged: "भाषा हिंदी में बदल दी गई है",
             voiceUnsupported: "इस ब्राउज़र में वॉयस पहचान उपलब्ध नहीं है",
@@ -258,10 +258,6 @@ document.addEventListener("DOMContentLoaded", () => {
             userLabel: "आप"
         }
     };
-
-    /* =========================================================
-       WEATHER DESCRIPTION TRANSLATION
-    ========================================================= */
 
     const weatherTranslations = {
         en: {
@@ -290,29 +286,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    /* =========================================================
-       QUICK QUESTIONS
-    ========================================================= */
-
     const quickQuestions = {
-        en: [
-            "Will it rain today?",
-            "Is it good for outdoor activities?",
-            "What should I wear?",
-            "How is the weather?"
-        ],
-        te: [
-            "ఈరోజు వర్షం పడుతుందా?",
-            "బయట కార్యకలాపాలకు వాతావరణం అనుకూలంగా ఉందా?",
-            "నేను ఏమి ధరించాలి?",
-            "వాతావరణం ఎలా ఉంది?"
-        ],
-        hi: [
-            "क्या आज बारिश होगी?",
-            "क्या बाहर की गतिविधियों के लिए मौसम अच्छा है?",
-            "मुझे क्या पहनना चाहिए?",
-            "मौसम कैसा है?"
-        ]
+        en: ["Will it rain today?", "Is it good for outdoor activities?", "What should I wear?", "How is the weather?"],
+        te: ["ఈరోజు వర్షం పడుతుందా?", "బయట కార్యకలాపాలకు వాతావరణం అనుకూలంగా ఉందా?", "నేను ఏమి ధరించాలి?", "వాతావరణం ఎలా ఉంది?"],
+        hi: ["क्या आज बारिश होगी?", "क्या बाहर की गतिविधियों के लिए मौसम अच्छा है?", "मुझे क्या पहनना चाहिए?", "मौसम कैसा है?"]
     };
 
     /* =========================================================
@@ -323,10 +300,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function initialize() {
         initializeVoiceRecognition();
-
         createFog();
         createHeatWaves();
-
         initializeLanguage();
         applyLanguageToUI();
 
@@ -342,13 +317,8 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
-        if (searchBtn) {
-            searchBtn.addEventListener("click", searchWeather);
-        }
-
-        if (sendBtn) {
-            sendBtn.addEventListener("click", sendQuestion);
-        }
+        if (searchBtn) searchBtn.addEventListener("click", searchWeather);
+        if (sendBtn) sendBtn.addEventListener("click", sendQuestion);
 
         if (questionInput) {
             questionInput.addEventListener("keydown", event => {
@@ -360,13 +330,8 @@ document.addEventListener("DOMContentLoaded", () => {
             questionInput.addEventListener("input", autoResizeTextarea);
         }
 
-        if (micBtn) {
-            micBtn.addEventListener("click", toggleMicrophone);
-        }
-
-        if (languageSelect) {
-            languageSelect.addEventListener("change", handleLanguageChange);
-        }
+        if (micBtn) micBtn.addEventListener("click", toggleMicrophone);
+        if (languageSelect) languageSelect.addEventListener("change", handleLanguageChange);
 
         document.addEventListener("click", event => {
             const button = event.target.closest(".quick-questions button");
@@ -379,14 +344,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 questionInput.value = question;
                 autoResizeTextarea();
             }
-
             askWeatherAI(question);
         });
     }
-
-    /* =========================================================
-       LANGUAGE INITIALIZATION
-    ========================================================= */
 
     function initializeLanguage() {
         if (!languageSelect) return;
@@ -407,7 +367,6 @@ document.addEventListener("DOMContentLoaded", () => {
     function getSelectedLanguage() {
         if (!languageSelect) return "en";
         const value = String(languageSelect.value || "en").trim().toLowerCase();
-
         if (value === "auto") {
             return languageSelect.dataset.detectedLanguage || detectBrowserLanguage();
         }
@@ -440,6 +399,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         applyLanguageToUI();
+        updateClimateButtonLabels();
 
         if (voiceStatus && !isListening) {
             voiceStatus.textContent = getLanguageChangedMessage();
@@ -496,8 +456,6 @@ document.addEventListener("DOMContentLoaded", () => {
         setText("clothingTitle", t("clothing"));
         setText("healthTitle", t("health"));
         setText("travelTitle", t("travel"));
-
-        setText("footerText", t("footer"));
 
         if (voiceStatus && !isListening) {
             voiceStatus.textContent = t("voiceReady");
@@ -567,31 +525,17 @@ document.addEventListener("DOMContentLoaded", () => {
     async function searchDetailedLocation(query) {
         if (!locationResults) return;
 
-        locationResults.innerHTML = `
-            <div class="location-result location-search-status">
-                🔎 Searching locations...
-            </div>
-        `;
-
+        locationResults.innerHTML = `<div class="location-result location-search-status">🔎 Searching locations...</div>`;
         locationSearchController = new AbortController();
 
         try {
-            const response = await fetch(
-                `/location-search?query=${encodeURIComponent(query)}`,
-                { signal: locationSearchController.signal }
-            );
-
+            const response = await fetch(`/location-search?query=${encodeURIComponent(query)}`, { signal: locationSearchController.signal });
             const data = await response.json();
             if (!response.ok) throw new Error(data.error || "Location not found.");
-
             displayLocationResults(data.results || []);
         } catch (error) {
             if (error.name === "AbortError") return;
-            locationResults.innerHTML = `
-                <div class="location-result location-search-status">
-                    ❌ ${escapeLocationText(error.message)}
-                </div>
-            `;
+            locationResults.innerHTML = `<div class="location-result location-search-status">❌ ${escapeLocationText(error.message)}</div>`;
         }
     }
 
@@ -600,11 +544,7 @@ document.addEventListener("DOMContentLoaded", () => {
         locationResults.innerHTML = "";
 
         if (!results || results.length === 0) {
-            locationResults.innerHTML = `
-                <div class="location-result location-search-status">
-                    No matching locations found.
-                </div>
-            `;
+            locationResults.innerHTML = `<div class="location-result location-search-status">No matching locations found.</div>`;
             return;
         }
 
@@ -615,10 +555,7 @@ document.addEventListener("DOMContentLoaded", () => {
             card.tabIndex = 0;
 
             const villageName = location.village || location.name || "";
-            const region = [location.mandal, location.district, location.state, location.country]
-                .filter(Boolean)
-                .join(", ");
-
+            const region = [location.mandal, location.district, location.state, location.country].filter(Boolean).join(", ");
             const lat = Number(location.lat);
             const lon = Number(location.lon);
 
@@ -659,14 +596,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        const displayName = [
-            location.village || location.name,
-            location.mandal,
-            location.district,
-            location.state,
-            location.country
-        ].filter(Boolean).join(", ");
-
+        const displayName = [location.village || location.name, location.mandal, location.district, location.state, location.country].filter(Boolean).join(", ");
         if (locationResults) locationResults.innerHTML = "";
         if (cityInput) cityInput.value = displayName;
 
@@ -675,17 +605,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function loadWeatherForCoordinates(lat, lon, locationName) {
         hideError();
-
         if (searchBtn) {
             searchBtn.disabled = true;
             searchBtn.textContent = t("loading");
         }
 
         try {
-            const response = await fetch(
-                `/weather-coordinates?lat=${encodeURIComponent(lat)}&lon=${encodeURIComponent(lon)}&location=${encodeURIComponent(locationName)}`
-            );
-
+            const response = await fetch(`/weather-coordinates?lat=${encodeURIComponent(lat)}&lon=${encodeURIComponent(lon)}&location=${encodeURIComponent(locationName)}`);
             const data = await parseResponse(response);
             if (!response.ok) throw new Error(data.error || t("weatherUnavailable"));
 
@@ -708,12 +634,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function escapeLocationText(value) {
-        return String(value || "")
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#039;");
+        return String(value || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
     }
 
     /* =========================================================
@@ -728,28 +649,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         if (selectedLocation) {
-            const selectedName = [
-                selectedLocation.name,
-                selectedLocation.state,
-                selectedLocation.country
-            ].filter(Boolean).join(", ");
-
+            const selectedName = [selectedLocation.name, selectedLocation.state, selectedLocation.country].filter(Boolean).join(", ");
             if (city === selectedName) {
-                loadWeatherForCoordinates(
-                    Number(selectedLocation.lat),
-                    Number(selectedLocation.lon),
-                    selectedName
-                );
+                loadWeatherForCoordinates(Number(selectedLocation.lat), Number(selectedLocation.lon), selectedName);
                 return;
             }
         }
-
         getWeather(city);
     }
 
     async function getWeather(city) {
         hideError();
-
         if (searchBtn) {
             searchBtn.disabled = true;
             searchBtn.textContent = t("loading");
@@ -758,10 +668,7 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             const response = await fetch(`/weather?city=${encodeURIComponent(city)}`);
             const data = await parseResponse(response);
-
-            if (!response.ok) {
-                throw new Error(data.error || t("weatherUnavailable"));
-            }
+            if (!response.ok) throw new Error(data.error || t("weatherUnavailable"));
 
             currentWeather = data;
             updateWeather(data);
@@ -770,7 +677,6 @@ document.addEventListener("DOMContentLoaded", () => {
             showInsightLoading();
             const requestId = ++insightsRequestId;
             await getSmartInsights(data.city, requestId);
-
         } catch (error) {
             console.error("Weather Error:", error);
             showError(error.message || t("weatherUnavailable"));
@@ -1059,10 +965,6 @@ document.addEventListener("DOMContentLoaded", () => {
         askWeatherAI(question);
     }
 
-    /* =========================================================
-       CHAT UI
-    ========================================================= */
-
     function addUserMessage(message) {
         if (!chatContainer) return;
         const wrapper = document.createElement("div");
@@ -1075,7 +977,6 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
             <div class="message-avatar user-avatar">👤</div>
         `;
-
         const paragraph = wrapper.querySelector("p");
         if (paragraph) paragraph.textContent = message;
 
@@ -1095,7 +996,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="message-time">${getCurrentTime()}</div>
             </div>
         `;
-
         const paragraph = wrapper.querySelector("p");
         if (paragraph) paragraph.textContent = message;
 
@@ -1114,7 +1014,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!typingIndicator) return;
         const thinking = document.getElementById("thinkingText");
         if (thinking) thinking.textContent = t("thinking");
-
         typingIndicator.classList.remove("hidden");
         scrollChatToBottom();
     }
@@ -1136,7 +1035,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* =========================================================
-       UNIFIED ROBUST VOICE RECOGNITION (FIXED)
+       MICROPHONE ASSISTANT (WAIT FOR FULL SENTENCE)
     ========================================================= */
 
     function initializeVoiceRecognition() {
@@ -1152,13 +1051,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         recognition = new SpeechRecognition();
-        recognition.continuous = false;
-        recognition.interimResults = false;
+        recognition.continuous = true;
+        recognition.interimResults = true;
         recognition.maxAlternatives = 1;
         recognition.lang = getRecognitionLanguage();
 
         recognition.onstart = () => {
             isListening = true;
+            finalVoiceTranscript = "";
             if (micBtn) micBtn.classList.add("recording");
             if (voiceStatus) {
                 voiceStatus.textContent = getVoiceListeningMessage();
@@ -1167,23 +1067,20 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         recognition.onresult = event => {
-            try {
-                const transcript = event.results[0][0].transcript;
-                if (questionInput) {
-                    questionInput.value = transcript;
-                    autoResizeTextarea();
+            let interimTranscript = "";
+            for (let i = event.resultIndex; i < event.results.length; ++i) {
+                const transcriptPiece = event.results[i][0].transcript;
+                if (event.results[i].isFinal) {
+                    finalVoiceTranscript += transcriptPiece + " ";
+                } else {
+                    interimTranscript += transcriptPiece;
                 }
+            }
 
-                if (voiceStatus) {
-                    voiceStatus.textContent = `${getVoiceRecognizedMessage()}: "${transcript}"`;
-                    voiceStatus.classList.remove("active");
-                }
-
-                if (transcript && transcript.trim()) {
-                    askWeatherAI(transcript.trim());
-                }
-            } catch (error) {
-                console.error("Voice Result Error:", error);
+            const combinedText = (finalVoiceTranscript + interimTranscript).trim();
+            if (questionInput && combinedText) {
+                questionInput.value = combinedText;
+                autoResizeTextarea();
             }
         };
 
@@ -1200,14 +1097,23 @@ document.addEventListener("DOMContentLoaded", () => {
         recognition.onend = () => {
             isListening = false;
             if (micBtn) micBtn.classList.remove("recording");
+
+            const textToSend = (finalVoiceTranscript || (questionInput ? questionInput.value : "")).trim();
+
             if (voiceStatus) {
                 voiceStatus.classList.remove("active");
-                setTimeout(() => {
-                    if (!isListening && voiceStatus) {
-                        voiceStatus.textContent = t("voiceReady");
-                    }
-                }, 2500);
+                if (textToSend) {
+                    voiceStatus.textContent = `${getVoiceRecognizedMessage()}: "${textToSend}"`;
+                } else {
+                    voiceStatus.textContent = t("voiceReady");
+                }
             }
+
+            if (textToSend) {
+                if (questionInput) questionInput.value = "";
+                askWeatherAI(textToSend);
+            }
+            finalVoiceTranscript = "";
         };
     }
 
@@ -1222,7 +1128,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // Explicitly request microphone stream permission from browser
         try {
             if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
                 await navigator.mediaDevices.getUserMedia({ audio: true });
@@ -1230,19 +1135,20 @@ document.addEventListener("DOMContentLoaded", () => {
         } catch (err) {
             console.error("Microphone permission denied:", err);
             if (voiceStatus) voiceStatus.textContent = t("microphoneDenied");
-            alert("Microphone access is blocked! Please allow microphone permission in your browser URL bar.");
+            alert("Microphone permission is blocked! Please enable microphone permission in browser settings.");
             return;
         }
 
         recognition.lang = getRecognitionLanguage();
 
         try {
+            finalVoiceTranscript = "";
             recognition.start();
         } catch (error) {
-            console.warn("Microphone start collision, restarting session...", error);
+            console.warn("Recognition restarting...", error);
             try {
                 recognition.stop();
-                setTimeout(() => recognition.start(), 200);
+                setTimeout(() => recognition.start(), 250);
             } catch (e) {
                 console.error("Critical Voice Error:", e);
             }
@@ -1253,7 +1159,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const language = getSelectedLanguage();
         if (language === "te") return "te-IN";
         if (language === "hi") return "hi-IN";
-        return "en-US";
+        return "en-IN";
     }
 
     function getVoiceListeningMessage() { return t("listening"); }
@@ -1265,7 +1171,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const messages = {
             en: {
                 "not-allowed": "🎤 Microphone permission denied. Check browser settings.",
-                "no-speech": "No speech detected. Please try speaking again.",
+                "no-speech": "No speech detected. Please speak clearly.",
                 "audio-capture": "Microphone hardware unavailable.",
                 "network": "Speech network error. Ensure internet connection.",
                 "aborted": "Voice recognition stopped"
@@ -1286,23 +1192,17 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         };
 
-        return (
-            messages[language]?.[error] ||
-            messages[language]?.aborted ||
-            messages.en.aborted
-        );
+        return messages[language]?.[error] || messages[language]?.aborted || messages.en.aborted;
     }
 
     /* =========================================================
-       TEXT TO SPEECH (VOICE OUTPUT)
+       TEXT TO SPEECH
     ========================================================= */
 
     function speakText(text, language = getSelectedLanguage()) {
         if (!speechEnabled || !("speechSynthesis" in window) || !text) return;
 
         window.speechSynthesis.cancel();
-
-        // Strip markdown stars, headers, backticks so they are not read out loud
         const cleanText = text.replace(/[*#_`-]/g, "").trim();
         const speech = new SpeechSynthesisUtterance(cleanText);
         speech.rate = 0.95;
@@ -1311,14 +1211,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (language === "te") speech.lang = "te-IN";
         else if (language === "hi") speech.lang = "hi-IN";
-        else speech.lang = "en-US";
+        else speech.lang = "en-IN";
 
         window.speechSynthesis.speak(speech);
     }
-
-    /* =========================================================
-       TEXTAREA AUTO-RESIZE
-    ========================================================= */
 
     function autoResizeTextarea() {
         if (!questionInput) return;
@@ -1327,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* =========================================================
-       SMART INSIGHTS
+       SMART INSIGHTS & PRECAUTIONS (RESILIENT PARSER)
     ========================================================= */
 
     async function getSmartInsights(city, requestId = ++insightsRequestId) {
@@ -1400,20 +1296,38 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function extractBulletPoints(text, sectionName) {
-        const sections = ["STATUS", "ALERT", "CLOTHING", "HEALTH", "TRAVEL"];
-        const currentIndex = sections.indexOf(sectionName);
-        if (currentIndex === -1) return [];
+        if (!text) return [];
 
-        const nextSection = sections[currentIndex + 1];
-        const startPattern = new RegExp(`(?:\\*{1,3}|#{1,6})?\\s*${sectionName}\\s*:?\\s*(?:\\*{1,3})?`, "i");
+        const aliases = {
+            "STATUS": ["STATUS", "స్థితి", "स्थिति"],
+            "ALERT": ["ALERT", "హెచ్చరిక", "జాగ్రత్తలు", "ముందు జాగ్రత్తలు", "चेतावनी", "सावधानियां"],
+            "CLOTHING": ["CLOTHING", "దుస్తులు", "వస్త్రధారణ", "कपड़े"],
+            "HEALTH": ["HEALTH", "ఆరోగ్యం", "ఆరోగ్య సూచనలు", "स्वास्थ्य"],
+            "TRAVEL": ["TRAVEL", "ప్రయాణం", "ప్రయాణ సూచనలు", "यात्रा"]
+        };
+
+        const currentAliases = aliases[sectionName] || [sectionName];
+        const allSections = ["STATUS", "ALERT", "CLOTHING", "HEALTH", "TRAVEL"];
+        const currentIndex = allSections.indexOf(sectionName);
+
+        const startPattern = new RegExp(
+            `(?:\\*{1,3}|#{1,6})?\\s*(?:${currentAliases.join("|")})\\s*:?\\s*(?:\\*{1,3})?`,
+            "i"
+        );
         const startMatch = text.match(startPattern);
-
         if (!startMatch || startMatch.index === undefined) return [];
 
         let sectionText = text.substring(startMatch.index + startMatch[0].length);
 
-        if (nextSection) {
-            const nextPattern = new RegExp(`(?:\\*{1,3}|#{1,6})?\\s*${nextSection}\\s*:?\\s*(?:\\*{1,3})?`, "i");
+        if (currentIndex < allSections.length - 1) {
+            const nextAliases = [];
+            for (let i = currentIndex + 1; i < allSections.length; i++) {
+                nextAliases.push(...(aliases[allSections[i]] || [allSections[i]]));
+            }
+            const nextPattern = new RegExp(
+                `(?:\\*{1,3}|#{1,6})?\\s*(?:${nextAliases.join("|")})\\s*:?\\s*(?:\\*{1,3})?`,
+                "i"
+            );
             const nextMatch = sectionText.match(nextPattern);
             if (nextMatch && nextMatch.index !== undefined) {
                 sectionText = sectionText.substring(0, nextMatch.index);
@@ -1461,15 +1375,8 @@ document.addEventListener("DOMContentLoaded", () => {
         displayInsight(insightTravel, [message]);
     }
 
-    /* =========================================================
-       ERROR BOX
-    ========================================================= */
-
     function showError(message) {
-        if (!errorBox) {
-            console.error(message);
-            return;
-        }
+        if (!errorBox) return;
         errorBox.textContent = message;
         errorBox.classList.add("show");
     }
@@ -1486,7 +1393,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* =========================================================
-       WEATHER HISTORY / FORECAST / GRAPH
+       WEATHER ANALYTICS (ANIMATED CARDS & CHARTS)
     ========================================================= */
 
     let climateChart = null;
@@ -1500,7 +1407,7 @@ document.addEventListener("DOMContentLoaded", () => {
         tools.id = "climateTools";
         tools.className = "climate-tools";
         tools.innerHTML = `
-            <div class="climate-tools-title">Weather Analytics</div>
+            <div class="climate-tools-title" id="climateSectionTitle">Weather Analytics</div>
             <div class="climate-buttons">
                 <button type="button" id="previousWeatherBtn" class="climate-btn">← Previous Days</button>
                 <button type="button" id="futureWeatherBtn" class="climate-btn">Next Days →</button>
@@ -1530,9 +1437,9 @@ document.addEventListener("DOMContentLoaded", () => {
     function climateText(key) {
         const lang = getSelectedLanguage();
         const text = {
-            en: { previous:"← Previous Days", future:"Next Days →", graph:"📈 Climate Graph", title:"Weather Analytics", previousTitle:"Previous 7 Days", futureTitle:"Next 5 Days", graphTitle:"Temperature & Humidity Trend", loading:"Loading weather data...", noCity:"Please search for a city first.", noData:"No weather data available.", temp:"Temperature", min:"Min", max:"Max", humidity:"Humidity", wind:"Wind", rain:"Rain", condition:"Condition", date:"Date", graphError:"Unable to display the graph." },
-            te: { previous:"← గత రోజులు", future:"తదుపరి రోజులు →", graph:"📈 వాతావరణ గ్రాఫ్", title:"వాతావరణ విశ్లేషణ", previousTitle:"గత 7 రోజులు", futureTitle:"తదుపరి 5 రోజులు", graphTitle:"ఉష్ణోగ్రత & తేమ ధోరణి", loading:"వాతావరణ సమాచారం లోడ్ అవుతోంది...", noCity:"ముందుగా ఒక నగరాన్ని శోధించండి.", noData:"వాతావరణ సమాచారం అందుబాటులో లేదు.", temp:"ఉష్ణోగ్రత", min:"కనిష్ట", max:"గరిష్ట", humidity:"తేమ", wind:"గాలి", rain:"వర్షం", condition:"పరిస్థితి", date:"తేదీ", graphError:"గ్రాఫ్‌ను చూపించలేకపోయాము." },
-            hi: { previous:"← पिछले दिन", future:"अगले दिन →", graph:"📈 मौसम ग्राफ़", title:"मौसम विश्लेषण", previousTitle:"पिछले 7 दिन", futureTitle:"अगले 5 दिन", graphTitle:"तापमान और नमी का रुझान", loading:"मौसम की जानकारी लोड हो रही है...", noCity:"कृपया पहले किसी शहर को खोजें।", noData:"मौसम की जानकारी उपलब्ध नहीं है।", temp:"तापमान", min:"न्यूनतम", max:"अधिकतम", humidity:"नमी", wind:"हवा", rain:"बारिश", condition:"स्थिति", date:"तारीख", graphError:"ग्राफ़ प्रदर्शित नहीं किया जा सका।" }
+            en: { previous:"← Previous Days", future:"Next Days →", graph:"📈 Climate Graph", title:"Weather Analytics", previousTitle:"Previous 7 Days Weather", futureTitle:"Next 5 Days Forecast", graphTitle:"Temperature & Humidity Trend", loading:"Loading weather analytics...", noCity:"Please search for a city first.", noData:"No weather analytics available.", temp:"Temperature", min:"Min", max:"Max", humidity:"Humidity", wind:"Wind", rain:"Rain", condition:"Condition", date:"Date", graphError:"Unable to display graph." },
+            te: { previous:"← గత రోజులు", future:"తదుపరి రోజులు →", graph:"📈 వాతావరణ గ్రాఫ్", title:"వాతావరణ విశ్లేషణ", previousTitle:"గత 7 రోజుల వాతావరణం", futureTitle:"తదుపరి 5 రోజుల అంచనా", graphTitle:"ఉష్ణోగ్రత & తేమ గ్రాఫ్", loading:"వాతావరణ సమాచారం లోడ్ అవుతోంది...", noCity:"ముందుగా ఒక నగరాన్ని శోధించండి.", noData:"విశ్లేషణ సమాచారం అందుబాటులో లేదు.", temp:"ఉష్ణోగ్రత", min:"కనిష్ట", max:"గరిష్ట", humidity:"తేమ", wind:"గాలి", rain:"వర్షం", condition:"పరిస్థితి", date:"తేదీ", graphError:"గ్రాఫ్‌ను చూపించలేకపోయాము." },
+            hi: { previous:"← पिछले दिन", future:"अगले दिन →", graph:"📈 मौसम ग्राफ़", title:"मौसम विश्लेषण", previousTitle:"पिछले 7 दिनों का मौसम", futureTitle:"अगले 5 दिनों का पूर्वानुमान", graphTitle:"तापमान और नमी का रुझान", loading:"मौसम जानकारी लोड हो रही है...", noCity:"कृपया पहले किसी शहर को खोजें।", noData:"मौसम विश्लेषण उपलब्ध नहीं है।", temp:"तापमान", min:"न्यूनतम", max:"अधिकतम", humidity:"नमी", wind:"हवा", rain:"बारिश", condition:"स्थिति", date:"तारीख", graphError:"ग्राफ़ प्रदर्शित नहीं किया जा सका।" }
         };
         return text[lang]?.[key] || text.en[key] || key;
     }
@@ -1542,25 +1449,45 @@ document.addEventListener("DOMContentLoaded", () => {
         const future = document.getElementById("futureWeatherBtn");
         const graph = document.getElementById("climateGraphBtn");
         const title = document.getElementById("climatePanelTitle");
+        const secTitle = document.getElementById("climateSectionTitle");
         if (previous) previous.textContent = climateText("previous");
         if (future) future.textContent = climateText("future");
         if (graph) graph.textContent = climateText("graph");
         if (title) title.textContent = climateText("title");
+        if (secTitle) secTitle.textContent = climateText("title");
     }
 
-    function showClimatePanel() { document.getElementById("climateDataPanel")?.classList.remove("hidden"); }
-    function hideClimatePanel() { document.getElementById("climateDataPanel")?.classList.add("hidden"); }
+    function showClimatePanel() { 
+        const panel = document.getElementById("climateDataPanel");
+        if (panel) {
+            panel.classList.remove("hidden");
+            panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    }
+    
+    function hideClimatePanel() { 
+        document.getElementById("climateDataPanel")?.classList.add("hidden"); 
+    }
 
     async function loadClimateData(type) {
         if (!currentWeather?.city) { showError(climateText("noCity")); return; }
         showClimatePanel();
         const table = document.getElementById("climateTableWrap");
         const chart = document.getElementById("climateChartWrap");
-        if (table) { table.classList.remove("hidden"); table.innerHTML = `<div class="climate-loading">${climateText("loading")}</div>`; }
+        if (table) { 
+            table.classList.remove("hidden"); 
+            table.innerHTML = `<div class="climate-loading"><span>⏳</span> ${climateText("loading")}</div>`; 
+        }
         chart?.classList.add("hidden");
+
         try {
             const endpoint = type === "historical" ? "/historical" : "/forecast";
-            const response = await fetch(`${endpoint}?city=${encodeURIComponent(currentWeather.city)}`);
+            let fetchUrl = `${endpoint}?city=${encodeURIComponent(currentWeather.city)}`;
+            if (currentWeather.latitude && currentWeather.longitude) {
+                fetchUrl += `&lat=${encodeURIComponent(currentWeather.latitude)}&lon=${encodeURIComponent(currentWeather.longitude)}`;
+            }
+
+            const response = await fetch(fetchUrl);
             const data = await parseResponse(response);
             if (!response.ok) throw new Error(data.error || climateText("noData"));
             climateDataCache[type] = Array.isArray(data.data) ? data.data : [];
@@ -1576,24 +1503,66 @@ document.addEventListener("DOMContentLoaded", () => {
         const summary = document.getElementById("climateSummary");
         if (!wrap) return;
         if (!rows.length) { wrap.innerHTML = `<div class="climate-error">${climateText("noData")}</div>`; return; }
-        if (summary) summary.textContent = type === "historical" ? climateText("previousTitle") : climateText("futureTitle");
-        wrap.innerHTML = `<div class="climate-table-scroll"><table class="climate-table"><thead><tr>
-            <th>${climateText("date")}</th><th>${climateText("temp")}</th><th>${climateText("min")}</th><th>${climateText("max")}</th><th>${climateText("humidity")}</th><th>${climateText("wind")}</th><th>${climateText("rain")}</th><th>${climateText("condition")}</th>
-            </tr></thead><tbody>${rows.map(row => `<tr>
-            <td>${escapeHtml(row.date || "--")}</td><td>${formatNumber(row.temperature)}°C</td><td>${formatNumber(row.min_temperature)}°C</td><td>${formatNumber(row.max_temperature)}°C</td><td>${formatNumber(row.humidity)}%</td><td>${formatNumber(row.wind_speed)} m/s</td><td>${formatNumber(row.precipitation)} mm</td><td>${escapeHtml(getTranslatedWeatherDescription(row.description || row.condition || "--"))}</td>
-            </tr>`).join("")}</tbody></table></div>`;
-    }
+        if (summary) {
+            summary.textContent = type === "historical" ? climateText("previousTitle") : climateText("futureTitle");
+            summary.className = "climate-summary analytics-fade-in";
+        }
 
-    async function ensureClimateChartLibrary() {
-        if (window.Chart) return;
-        await new Promise((resolve, reject) => {
-            const existing = document.querySelector('script[data-weather-chart="true"]');
-            if (existing) { existing.addEventListener("load", resolve, {once:true}); existing.addEventListener("error", reject, {once:true}); return; }
-            const script = document.createElement("script");
-            script.src = "https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js";
-            script.dataset.weatherChart = "true";
-            script.onload = resolve; script.onerror = reject; document.head.appendChild(script);
-        });
+        const cardsHtml = rows.map((row, idx) => {
+            const conditionDesc = String(row.description || row.condition || "").toLowerCase();
+            let icon = "☀️";
+            let weatherBadgeClass = "badge-clear";
+
+            if (conditionDesc.includes("rain") || conditionDesc.includes("drizzle")) {
+                icon = "🌧️";
+                weatherBadgeClass = "badge-rain";
+            } else if (conditionDesc.includes("snow")) {
+                icon = "❄️";
+                weatherBadgeClass = "badge-snow";
+            } else if (conditionDesc.includes("storm") || conditionDesc.includes("thunder")) {
+                icon = "⛈️";
+                weatherBadgeClass = "badge-storm";
+            } else if (conditionDesc.includes("cloud") || conditionDesc.includes("overcast")) {
+                icon = "☁️";
+                weatherBadgeClass = "badge-cloud";
+            } else if (conditionDesc.includes("fog") || conditionDesc.includes("mist")) {
+                icon = "🌫️";
+                weatherBadgeClass = "badge-mist";
+            }
+
+            return `
+                <div class="analytics-card" style="animation-delay: ${idx * 0.08}s">
+                    <div class="analytics-card-header">
+                        <span class="analytics-date">${escapeHtml(row.date || "--")}</span>
+                        <span class="analytics-icon">${icon}</span>
+                    </div>
+                    <div class="analytics-temp-main">
+                        <span class="analytics-temp">${formatNumber(row.temperature)}°C</span>
+                        <span class="analytics-condition ${weatherBadgeClass}">${escapeHtml(getTranslatedWeatherDescription(row.description || row.condition || "--"))}</span>
+                    </div>
+                    <div class="analytics-stats-grid">
+                        <div class="analytics-stat">
+                            <small>MIN / MAX</small>
+                            <strong>${formatNumber(row.min_temperature)}° / ${formatNumber(row.max_temperature)}°C</strong>
+                        </div>
+                        <div class="analytics-stat">
+                            <small>HUMIDITY</small>
+                            <strong>💧 ${formatNumber(row.humidity)}%</strong>
+                        </div>
+                        <div class="analytics-stat">
+                            <small>WIND</small>
+                            <strong>💨 ${formatNumber(row.wind_speed)} m/s</strong>
+                        </div>
+                        <div class="analytics-stat">
+                            <small>RAIN</small>
+                            <strong>☔ ${formatNumber(row.precipitation)} mm</strong>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }).join("");
+
+        wrap.innerHTML = `<div class="analytics-cards-container">${cardsHtml}</div>`;
     }
 
     async function showClimateGraph() {
@@ -1603,14 +1572,18 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("climateChartWrap")?.classList.remove("hidden");
         const summary = document.getElementById("climateSummary");
         if (summary) summary.textContent = climateText("graphTitle");
+
         try {
             if (!climateDataCache.forecast.length) {
-                const response = await fetch(`/forecast?city=${encodeURIComponent(currentWeather.city)}`);
+                let fetchUrl = `/forecast?city=${encodeURIComponent(currentWeather.city)}`;
+                if (currentWeather.latitude && currentWeather.longitude) {
+                    fetchUrl += `&lat=${encodeURIComponent(currentWeather.latitude)}&lon=${encodeURIComponent(currentWeather.longitude)}`;
+                }
+                const response = await fetch(fetchUrl);
                 const data = await parseResponse(response);
                 if (!response.ok) throw new Error(data.error || climateText("noData"));
                 climateDataCache.forecast = Array.isArray(data.data) ? data.data : [];
             }
-            await ensureClimateChartLibrary();
             renderClimateChart(climateDataCache.forecast);
         } catch (error) {
             console.error("Climate Graph Error:", error);
@@ -1623,17 +1596,53 @@ document.addEventListener("DOMContentLoaded", () => {
         const canvas = document.getElementById("climateChart");
         if (!canvas || !rows.length || !window.Chart) return;
         if (climateChart) climateChart.destroy();
+        
         climateChart = new Chart(canvas.getContext("2d"), {
             type: "line",
-            data: { labels: rows.map(r => r.date), datasets: [
-                { label: climateText("temp") + " °C", data: rows.map(r => Number(r.temperature)), tension:.35, borderWidth:2, pointRadius:4, yAxisID:"temperature" },
-                { label: climateText("humidity") + " %", data: rows.map(r => Number(r.humidity)), tension:.35, borderWidth:2, pointRadius:4, yAxisID:"humidity" }
-            ]},
-            options: { responsive:true, maintainAspectRatio:false, interaction:{mode:"index",intersect:false}, plugins:{legend:{labels:{color:"#cbd5e1"}}}, scales:{
-                x:{ticks:{color:"#8d9aab"},grid:{color:"rgba(255,255,255,.05)"}},
-                temperature:{type:"linear",position:"left",ticks:{color:"#8d9aab"},grid:{color:"rgba(255,255,255,.05)"}},
-                humidity:{type:"linear",position:"right",min:0,max:100,grid:{drawOnChartArea:false},ticks:{color:"#8d9aab"}}
-            }}
+            data: { 
+                labels: rows.map(r => r.date), 
+                datasets: [
+                    { 
+                        label: climateText("temp") + " °C", 
+                        data: rows.map(r => Number(r.temperature)), 
+                        borderColor: "#38bdf8",
+                        backgroundColor: "rgba(56, 189, 248, 0.15)",
+                        fill: true,
+                        tension: 0.4, 
+                        borderWidth: 2.5, 
+                        pointRadius: 4, 
+                        pointHoverRadius: 6,
+                        pointBackgroundColor: "#38bdf8",
+                        yAxisID: "temperature" 
+                    },
+                    { 
+                        label: climateText("humidity") + " %", 
+                        data: rows.map(r => Number(r.humidity)), 
+                        borderColor: "#818cf8",
+                        backgroundColor: "transparent",
+                        borderDash: [5, 5],
+                        tension: 0.4, 
+                        borderWidth: 2, 
+                        pointRadius: 3, 
+                        yAxisID: "humidity" 
+                    }
+                ]
+            },
+            options: { 
+                responsive: true, 
+                maintainAspectRatio: false, 
+                animation: {
+                    duration: 1100,
+                    easing: "easeOutQuart"
+                },
+                interaction: { mode: "index", intersect: false }, 
+                plugins: { legend: { labels: { color: "#cbd5e1" } } }, 
+                scales: {
+                    x: { ticks: { color: "#8d9aab" }, grid: { color: "rgba(255,255,255,.05)" } },
+                    temperature: { type: "linear", position: "left", ticks: { color: "#38bdf8" }, grid: { color: "rgba(255,255,255,.05)" } },
+                    humidity: { type: "linear", position: "right", min: 0, max: 100, grid: { drawOnChartArea: false }, ticks: { color: "#818cf8" } }
+                }
+            }
         });
     }
 
@@ -1642,5 +1651,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initializeClimateFeatures();
     updateClimateButtonLabels();
-    languageSelect?.addEventListener("change", () => setTimeout(updateClimateButtonLabels, 0));
 });
